@@ -37,9 +37,10 @@
     		<div class="comments-container">
 			  <h1>Comentarios </h1>
 			  <div class="margin">
-  				<form>
-  					<textarea class="form-input" placeholder="Deixe seu comentario.."></textarea>
-  					<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+  				<form method="POST" class="post-form">{% csrf_token %}
+  					<textarea class="form-input" placeholder="Deixe seu comentario..">{{ form.as_p }}</textarea>
+  					
+  					<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Comentar</button>
   				</form>
 			  </div>
 			  <ul id="comments-list" class="comments-list">
@@ -56,7 +57,7 @@
 							<i class="fa fa-heart"></i>
 						</div>
 						<div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+							<p>{{ post.comentario|linebreaksbr }}</p>
 						</div>
 					</div>
 				</div>

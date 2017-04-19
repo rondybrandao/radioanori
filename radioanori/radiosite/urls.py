@@ -9,5 +9,6 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
+    url(r'^post/(?P<pk>[0-9]+)/$', views.post_comentario, name='post_comentario'),
     #url(r'^pages/$', views.single_page, name='single_page'),
 ] 

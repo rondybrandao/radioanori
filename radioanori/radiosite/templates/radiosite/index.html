@@ -168,21 +168,23 @@
                 <div class="single_category_inner">
                   <ul class="catg_nav">
                     <li>
-                    {% for post in posts %}
-                      <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=post.pk %}"> <img src="static/css/images/img-cultura-show_PAUL.jpg" alt=""> </a></div>
+                    
+                      <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=1 %}"> <img src="static/css/images/img-cultura-show_PAUL.jpg" alt=""> </a></div>
                       <a class="catg_title" href="templates/radiosite/pages/single_page.html"> Curabitur ac dictum nisl eu hendrerit ante</a>
                       <div class="sing_commentbox">
                         <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
                         <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                    {% endfor %}
+                      
                    </li>
                     <li>
-                      <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="static/css/images/310x150.jpg" alt=""> </a></div>
+                    
+                      <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=2 %}"> <img src="static/css/images/img-cot-uber.jpg" alt=""> </a></div>
                       <a class="catg_title" href="pages/single_page.html">Fusce eu nulla semper porttitor felis sit amet</a>
                       <div class="sing_commentbox">
                         <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
                         <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                   </li>
+                    
+                   </li>     
                     <li>
                       <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="static/css/images/310x150.jpg" alt=""> </a></div>
                       <a class="catg_title" href="pages/single_page.html"> Curabitur ac dictum nisl eu hendrerit ante</a>
