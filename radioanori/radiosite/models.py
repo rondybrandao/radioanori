@@ -192,7 +192,7 @@ class Megasena(models.Model):
             # y = str(linha.strip().split())   
             y = str(linha.split())
             
-            dic[y[1:18]] = y[20:107]
+            dic[y[1:20]] = y[20:107]
             # dic[y[0:2]] = y[4:19]
         
         f.close()
