@@ -1,0 +1,267 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Radio Anori</title>
+        <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
+	    
+	    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="./bootstrap/css/header.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/css-loteria.css' %}">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+        
+        <script src="static/js/main.js"></script>
+        <style>
+			* {
+			    box-sizing: border-box;
+			}
+			.row::after {
+			    content: "";
+			    clear: both;
+			    display: table;
+			}
+			[class*="col-"] {
+			    float: left;
+			    padding: 15px;
+			}
+			.col-1 {width: 8.33%;}
+			.col-2 {width: 16.66%;}
+			.col-3 {width: 25%;}
+			.col-4 {width: 33.33%;}
+			.col-5 {width: 41.66%;}
+			.col-6 {width: 50%;}
+			.col-7 {width: 58.33%;}
+			.col-8 {width: 66.66%;}
+			.col-9 {width: 75%;}
+			.col-10 {width: 83.33%;}
+			.col-11 {width: 91.66%;}
+			.col-12 {width: 100%;}
+			html {
+			    font-family: "Lucida Sans", sans-serif;
+			}
+			body {
+			 font-family: calibri;
+			}
+			.header {
+			    background-color: #9933cc;
+			    color: #ffffff;
+			    padding: 15px;
+			}
+			.menu ul {
+			    list-style-type: none;
+			    margin: 0;
+			    padding: 0;
+			}
+			.menu li {
+			    padding: 8px;
+			    margin-bottom: 7px;
+			    background-color: #33b5e5;
+			    color: #ffffff;
+			    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			}
+			.menu li:hover {
+			    background-color: #0099cc;
+			}
+			.flex-container {
+			    display: -webkit-flex;
+			    display: flex;
+			    -webkit-align-items: flex-start;
+			    align-items: flex-start;
+			    width: 400px;
+			    height: 250px;
+			    background-color: lightgrey;
+			}
+			
+			.flex-item {
+			    background-color: cornflowerblue;
+			    width: 100px;
+			    margin: 10px;
+			}
+			.span3{
+				padding: 15px;
+			}
+			
+			.niceform{
+				padding: 6px
+			}
+			.page-header {
+    			background-color: #008B00;
+    			margin-top: 0;
+    			padding: 10px 10px 10px 20px;
+			}
+		
+			</style>   
+    </head>
+    
+   <div class="header">
+   	<h1>Loteria</h1> 
+   </div>
+   <div class="row">
+	<div class="col-3 menu">
+	  
+	  <ul>
+	    <li>Lotofacil</li>
+	    <li>Mega sena</li>
+	    <li>Quina</li>
+	    <li>Lotomania</li>
+	  </ul>
+	</div>
+
+  <div class="col-9">
+  <h1>Motor de pesquisa de dezenas</h1>
+  <div class="col-lg-6">
+  <div class="container">
+	<div class="row">
+		<div class="span12">
+            <p class="lead">Escolha a sua aposta:</p>
+            <div id="tab" class="btn-group" data-toggle="buttons-radio">
+              <a href="/lotofacil" class="btn btn-large btn-info " data-toggle="tab">Lotofacil</a>
+              <a href="/megasena" class="btn btn-large btn-info active" data-toggle="tab">Mega sena</a>
+              <a href="/quina" class="btn btn-large btn-info" data-toggle="tab">Quina</a>
+              <a href="/lotomania" class="btn btn-large btn-info"  data-toggle="tab">Lotomania</a>
+            </div>
+             
+            <div class="tab-pane active" id="lotofacil">
+                <br>
+                <p class="lead">Mega sena</p>
+                <div class="row">
+                    <div class="span3">
+                      <form action="/megasena-result/" method="POST">{% csrf_token %}
+                      <div style="float:left">
+						<table>
+							<tr>
+								<td><label class="niceform"> 01 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 02 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 03 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 04 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 05 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 06 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 07 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 08 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 09 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 10 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+								
+							</tr>
+							<tr>
+								<td><label class="niceform"> 11 <input type="checkbox" value="06" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 12 <input type="checkbox" value="07" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 13 <input type="checkbox" value="08" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 14 <input type="checkbox" value="09" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 15 <input type="checkbox" value="10" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 16 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 17 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 18 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 19 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 20 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+							
+							</tr>
+							<tr>
+								<td><label class="niceform"> 21 <input type="checkbox" value="11" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 22 <input type="checkbox" value="12" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 23 <input type="checkbox" value="13" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 24 <input type="checkbox" value="14" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 25 <input type="checkbox" value="15" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 26 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 27 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 28 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 29 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 30 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+							
+							</tr>
+							<tr>
+								<td><label class="niceform"> 31 <input type="checkbox" value="16" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 32 <input type="checkbox" value="17" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 33 <input type="checkbox" value="18" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 34 <input type="checkbox" value="19" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 35 <input type="checkbox" value="20" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 36 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 37 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 38 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 39 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 40 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+							
+							</tr>
+							<tr>
+								<td><label class="niceform"> 41 <input type="checkbox" value="21" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 42 <input type="checkbox" value="22" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 43 <input type="checkbox" value="23" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 44 <input type="checkbox" value="24" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 45 <input type="checkbox" value="25" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 46 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 47 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 48 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 49 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 50 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+							
+							</tr>
+							<tr>
+								<td><label class="niceform"> 51 <input type="checkbox" value="21" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 52 <input type="checkbox" value="22" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 53 <input type="checkbox" value="23" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 54 <input type="checkbox" value="24" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 55 <input type="checkbox" value="25" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 56 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 57 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 58 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 59 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 60 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+							
+							</tr>
+						
+						</table>
+							<div class="col-xs-2">
+					        <button type="submit" id="pesquisa" class="btn btn-success" data-toggle="#jobInfo">Pesquisar</button>
+					        </div>
+					 	</div>
+						</form>  		  
+                    </div>
+                    <div class="span9">
+                      <a>{{mysorteio.sorteio}}</a> 
+                    </div>
+                </div>
+              </div>
+			  
+		  <hr>    
+        </div>
+	</div>
+  </div>
+  </div>
+  
+  <h1>Resultado Mega sena</h1>
+  <div class="col-lg-6">
+  	<div class="container-fluid">
+  		<div class="row">
+  			<div class="col-lg-4">
+  				<div class="page-header" >Concurso</div>
+  					{%for c in con_n_concurso%}
+   					<div class="linha-resultado">{{c}} <hr style="height:1px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/></div>
+   					{%endfor%}	
+  				   				
+  			</div>
+  			<div class="col-lg-4">
+  				<div class="page-header">Data</div>
+  				{%for d in con_data_sorteio%}
+   					<div >{{d}} <hr style="height:1px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/></div>
+   				{%endfor%}   				
+  			</div>
+  			<div class="col-lg-4">
+  				<div class="page-header">Acertos</div>
+  				{%for a in con_qnt_acerto%}
+   					<div>{{a}} <hr style="height:1px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/></div>
+   				{%endfor%}   				
+  			</div>
+  		</div> 
+  	</div>
+  </div>   
+   
+  </div>
+
+ </div>

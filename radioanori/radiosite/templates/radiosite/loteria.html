@@ -1,0 +1,199 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/css-loteria.css' %}">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+        <script src="static/js/main.js"></script>
+        <style>
+			* {
+			    box-sizing: border-box;
+			}
+			.row::after {
+			    content: "";
+			    clear: both;
+			    display: table;
+			}
+			[class*="col-"] {
+			    float: left;
+			    padding: 15px;
+			}
+			.col-1 {width: 8.33%;}
+			.col-2 {width: 16.66%;}
+			.col-3 {width: 25%;}
+			.col-4 {width: 33.33%;}
+			.col-5 {width: 41.66%;}
+			.col-6 {width: 50%;}
+			.col-7 {width: 58.33%;}
+			.col-8 {width: 66.66%;}
+			.col-9 {width: 75%;}
+			.col-10 {width: 83.33%;}
+			.col-11 {width: 91.66%;}
+			.col-12 {width: 100%;}
+			html {
+			    font-family: "Lucida Sans", sans-serif;
+			}
+			body {
+			 font-family: calibri;
+			}
+			.header {
+			    background-color: #9933cc;
+			    color: #ffffff;
+			    padding: 15px;
+			}
+			.menu ul {
+			    list-style-type: none;
+			    margin: 0;
+			    padding: 0;
+			}
+			.menu li {
+			    padding: 8px;
+			    margin-bottom: 7px;
+			    background-color: #33b5e5;
+			    color: #ffffff;
+			    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			}
+			.menu li:hover {
+			    background-color: #0099cc;
+			}
+			.flex-container {
+			    display: -webkit-flex;
+			    display: flex;
+			    -webkit-align-items: flex-start;
+			    align-items: flex-start;
+			    width: 400px;
+			    height: 250px;
+			    background-color: lightgrey;
+			}
+			
+			.flex-item {
+			    background-color: cornflowerblue;
+			    width: 100px;
+			    margin: 10px;
+			}
+			.span3{
+				padding: 15px;
+			}
+			
+			.niceform{
+				padding: 10px
+			}
+			
+			</style>
+        
+    </head>
+    
+    <body>
+
+<div class="header">
+  <h1>Loteria</h1>
+  <a href="/">|Inicio|</a>
+</div>
+
+<div class="row">
+
+<div class="col-3 menu">
+  <ul>
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/lotofacil">Lotofacil</a></li>
+    <li><a href="/megasena">Megasena</a></li>
+    <li>Sorteios</li>
+  </ul>
+</div>
+
+<div class="col-9">
+  <h1>Motor de pesquisa de dezenas</h1>
+  
+  <div class="container">
+	<div class="row">
+		<div class="span12">
+            <p class="lead">Escolha a sua aposta:</p>
+            <div id="tab" class="btn-group" data-toggle="buttons-radio">
+              <a href="/lotofacil" class="btn btn-large btn-info active" >Lotofacil</a>
+              <a href="/megasena" class="btn btn-large btn-info" >Mega sena</a>
+              <a href="#quina" class="btn btn-large btn-info" data-toggle="tab">Quina</a>
+              <a href="#lotomania" class="btn btn-large btn-info"  data-toggle="tab">Lotomania</a>
+            </div>
+             
+            <div class="tab-pane active" id="lotofacil">
+                
+                <div class="row">
+                    <div class="span3">
+                      <form action="/lotofacil/" method="POST">{% csrf_token %}
+                      <div style="float:left">
+                      	<p class="lead">Lotofacil</p>
+						<table>
+							<tr>
+								<td><label class="niceform"> 01 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 02 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 03 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 04 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 05 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+								
+							</tr>
+							<tr>
+								<td><label class="niceform"> 06 <input type="checkbox" value="06" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 07 <input type="checkbox" value="07" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 08 <input type="checkbox" value="08" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 09 <input type="checkbox" value="09" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 10 <input type="checkbox" value="10" name="pesquisa"> </label></td>
+							
+							</tr>
+							<tr>
+								<td><label class="niceform"> 11 <input type="checkbox" value="11" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 12 <input type="checkbox" value="12" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 13 <input type="checkbox" value="13" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 14 <input type="checkbox" value="14" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 15 <input type="checkbox" value="15" name="pesquisa"> </label></td>
+							
+							</tr>
+							<tr>
+								<td><label class="niceform"> 16 <input type="checkbox" value="16" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 17 <input type="checkbox" value="17" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 18 <input type="checkbox" value="18" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 19 <input type="checkbox" value="19" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 20 <input type="checkbox" value="20" name="pesquisa"> </label></td>
+							
+							</tr>
+							<tr>
+								<td><label class="niceform"> 21 <input type="checkbox" value="21" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 22 <input type="checkbox" value="22" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 23 <input type="checkbox" value="23" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 24 <input type="checkbox" value="24" name="pesquisa"> </label></td>
+								<td><label class="niceform"> 25 <input type="checkbox" value="25" name="pesquisa"> </label></td>
+							
+							</tr>
+						
+						</table>
+							<div class="col-xs-2">
+					        <button type="submit" id="pesquisa" class="btn btn-success" data-toggle="#jobInfo">Pesquisar</button>
+					        </div>
+					 	</div>
+						</form>  		  
+                    </div>
+                    <div class="span9">
+                      <a>{{mysorteio.sorteio}}</a> 
+                    </div>
+                </div>
+              </div>
+			  
+		  <hr>    
+        </div>
+	</div>
+  </div>
+  </div>
+ </div>
+</div>
+
+</body>
+
+</html>  
+        
+        
+        
+
+       	
+			

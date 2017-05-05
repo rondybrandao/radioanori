@@ -1,0 +1,154 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Radio Anori</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/css-megasena-result.css' %}">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+        <script src="static/js/main.js"></script>
+         
+        
+    </head>
+    
+    <body>
+
+		<div class="header">
+		  <h1>Loteria | Mega-sena</h1>
+		  <a href="/">|Inicio|</a>
+		</div>
+		
+		<div class="row">
+		
+			<div class="col-3 menu">
+			  <ul>
+			    <li><a href="/">Inicio</a></li>
+			    <li><a href="/lotofacil">Lotofacil</a></li>
+			    <li><a href="/megasena">Mega-sena</a></li>
+			    <li>Sorteios</li>
+			  </ul>
+			</div>
+			
+			<div class="col-9">
+			  <h1>Motor de pesquisa de dezenas</h1>
+			  
+			  <div class="container">
+				<div class="row">
+					<div class="span12">
+			            <p class="lead">Escolha a sua aposta:</p>
+			            <div id="tab" class="btn-group" data-toggle="buttons-radio">
+			              <a href="/lotofacil" class="btn btn-large btn-info " data-toggle="tab">Lotofacil</a>
+			              <a href="/megasena" class="btn btn-large btn-info active" data-toggle="tab">Mega sena</a>
+			              <a href="/quina" class="btn btn-large btn-info" data-toggle="tab">Quina</a>
+			              <a href="/lotomania" class="btn btn-large btn-info"  data-toggle="tab">Lotomania</a>
+			            </div>
+			             
+			            <div class="tab-pane active" id="megasena">           
+			                <div class="row">
+			                    <div class="span3">
+			                      <form action="/megasena-result/" method="POST">{% csrf_token %}
+			                      <div style="float:left">
+			                      	<p class="lead">Mega-sena</p>
+									<table>
+										<tr>
+											<td><label class="niceform"> 01 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 02 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 03 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 04 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 05 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 06 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 07 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 08 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 09 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 10 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+											
+										</tr>
+										<tr>
+											<td><label class="niceform"> 11 <input type="checkbox" value="06" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 12 <input type="checkbox" value="07" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 13 <input type="checkbox" value="08" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 14 <input type="checkbox" value="09" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 15 <input type="checkbox" value="10" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 16 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 17 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 18 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 19 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 20 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+										
+										</tr>
+										<tr>
+											<td><label class="niceform"> 21 <input type="checkbox" value="11" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 22 <input type="checkbox" value="12" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 23 <input type="checkbox" value="13" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 24 <input type="checkbox" value="14" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 25 <input type="checkbox" value="15" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 26 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 27 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 28 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 29 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 30 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+										
+										</tr>
+										<tr>
+											<td><label class="niceform"> 31 <input type="checkbox" value="16" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 32 <input type="checkbox" value="17" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 33 <input type="checkbox" value="18" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 34 <input type="checkbox" value="19" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 35 <input type="checkbox" value="20" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 36 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 37 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 38 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 39 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 40 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+										
+										</tr>
+										<tr>
+											<td><label class="niceform"> 41 <input type="checkbox" value="21" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 42 <input type="checkbox" value="22" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 43 <input type="checkbox" value="23" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 44 <input type="checkbox" value="24" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 45 <input type="checkbox" value="25" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 46 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 47 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 48 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 49 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 50 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+										
+										</tr>
+										<tr>
+											<td><label class="niceform"> 51 <input type="checkbox" value="21" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 52 <input type="checkbox" value="22" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 53 <input type="checkbox" value="23" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 54 <input type="checkbox" value="24" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 55 <input type="checkbox" value="25" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 56 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 57 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 58 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 59 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+											<td><label class="niceform"> 60 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+										
+										</tr>
+									
+									</table>
+										<div class="col-xs-2">
+								        <button type="submit" id="pesquisa" class="btn btn-success" data-toggle="#jobInfo">Pesquisar</button>
+								        </div>
+								 	</div>
+									</form>  		  
+			                    </div>
+			                    <div class="span9">
+			                      <a>{{mysorteio.sorteio}}</a> 
+			                    </div>
+			                </div>
+			              </div>
+						  
+					  <hr>    
+			        </div>
+				</div>
+			  </div>
+		  </div>
+		 </div>
+	</body>
+
+</html>
