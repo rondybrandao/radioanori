@@ -3,6 +3,7 @@
 <head>
 <title>Radio Anori</title>
 <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="static/css/assets/css/bootstrap.min.css">
@@ -14,11 +15,8 @@
 <link rel="stylesheet" type="text/css" href="static/css/assets/css/style.css">
 <link rel="stylesheet" href="{% static 'css/perfil-radialista.css' %}">
 
-
-<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
-<link rel="stylesheet" href="https://raw.github.com/blueimp/Bootstrap-Image-Gallery/master/css/bootstrap-image-gallery.css">
-<link rel="stylesheet" href="https://raw.github.com/blueimp/Bootstrap-Image-Gallery/master/css/demo.css">
-
+<!-- Galeria -->
+ 
 
 <!--[if lt IE 9]>
 <script src="static/css/assets/js/html5shiv.min.js"></script>
@@ -69,18 +67,58 @@
     </header>
     <div class="latest_newsarea"> <span>Ultimas noticias</span>
       <ul id="ticker01" class="news_sticker">
-        <li><a href="#">My First News Item</a></li>
-        <li><a href="#">My Second News Item</a></li>
-        <li><a href="#">My Third News Item</a></li>
-        <li><a href="#">My Four News Item</a></li>
-        <li><a href="#">My Five News Item</a></li>
-        <li><a href="#">My Six News Item</a></li>
-        <li><a href="#">My Seven News Item</a></li>
-        <li><a href="#">My Eight News Item</a></li>
-        <li><a href="#">My Nine News Item</a></li>
+        <li><a href="#"><b>&#8227</b>My First News Item</a></li>
+        <li><a href="#"><b>&#8227</b>My Second News Item</a></li>
+        <li><a href="#"><b>&#8227</b>My Third News Item</a></li>
+        <li><a href="#"><b>&#8227</b>My Four News Item</a></li>
+        <li><a href="#"><b>&#8227</b>My Five News Item</a></li>
+        <li><a href="#"><b>&#8227</b>My Six News Item</a></li>
+        <li><a href="#"><b>&#8227</b>My Seven News Item</a></li>
+        <li><a href="#"><b>&#8227</b>My Eight News Item</a></li>
+        <li><a href="#"><b>&#8227</b>My Nine News Item</a></li>
       </ul>
     </div>
-   
+    <!--<div class="page-header">
+	  <h1>Hello, world!</h1>
+	  <img src="static/css/images/belinha.jpg" alt="">
+	  	<p>...</p>
+	  	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+	  
+	 </div>
+     <div class="thumbnail_slider_area">
+      <div class="owl-carousel">
+        <div class="signle_iteam"> <img src="static/css/images/395x396.jpg" alt="">
+          <div class="sing_commentbox slider_comntbox">
+            <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+            <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+          <a class="slider_tittle" href="#">Fusce eu nulla semper porttitor felis sit amet</a></div>
+        <div class="signle_iteam"> <img src="static/css/images/395x396.jpg" alt="">
+          <div class="sing_commentbox slider_comntbox">
+            <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+            <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+          <a class="slider_tittle" href="#">Fusce eu nulla semper porttitor felis sit amet</a></div>
+        <div class="signle_iteam"> <img src="static/css/images/395x396.jpg" alt="">
+          <div class="sing_commentbox slider_comntbox">
+            <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+            <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+          <a class="slider_tittle" href="#">Fusce eu nulla semper porttitor felis sit amet</a></div>
+        <div class="signle_iteam"> <img src="static/css/images/395x396.jpg" alt="">
+          <div class="sing_commentbox slider_comntbox">
+            <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+            <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+          <a class="slider_tittle" href="#">Fusce eu nulla semper porttitor felis sit amet</a></div>
+        <div class="signle_iteam"> <img src="static/css/images/395x396.jpg" alt="">
+          <div class="sing_commentbox slider_comntbox">
+            <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+            <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+          <a class="slider_tittle" href="#">Fusce eu nulla semper porttitor felis sit amet</a></div>
+        <div class="signle_iteam"> <img src="static/css/images/395x396.jpg" alt="">
+          <div class="sing_commentbox slider_comntbox">
+            <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+            <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+          <a class="slider_tittle" href="#">Fusce eu nulla semper porttitor felis sit amet</a></div>
+      </div>
+    </div> -->
     <section id="contentbody">
       <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
@@ -100,41 +138,6 @@
                 <h2><span>Anuncio</span></h2>
                 <div class="singleleft_inner"> <a href="#"><img src="static/css/images/150x600.jpg" alt=""></a></div>
               </div>
-              <div class="singleleft_inner">
-                  <ul class="catg3_snav  wow fadeInDown">
-                    <li>
-                      <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title_anuncio">Celular sansung s5</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Moto Honda CG 125cc</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Vendo casa no bairro do japão</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Alugo casa no centro</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Moto Honda CG 225cc</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Moto Honda CG 225cc</a></div>
-                      </div>
-                   </li>
-                    
-                  </ul>
-                </div>
             </div>
           </div>
         </div>
@@ -150,50 +153,37 @@
                     <li data-target="#myCarousel" data-slide-to="3"></li>
                   </ol>
                   <div class="carousel-inner" role="listbox">
-                    <div class="item active" > <img src="static/css/images/albert-einstein-filha.png" alt="">
-                      
-                        
-                      
+                    <div class="item active"> <img src="static/css/images/668x328.jpg" alt="">
+                      <div class="carousel-caption">
+                        <h1><a href="#"> Aliquam malesuada diam eget turpis varius 1</a></h1>
+                      </div>
                     </div>
-                    <div class="item"> <img src="static/css/images/belinha.jpg" alt="">
-                      
-                        
-                     
+                    <div class="item"> <img src="static/css/images/668x328.jpg" alt="">
+                      <div class="carousel-caption">
+                        <h1><a href="#"> Aliquam malesuada diam eget turpis varius 2</a></h1>
+                      </div>
                     </div>
-                    <div class="item"> <img  src="static/css/images/668x328.jpg" alt="">
-                     
-                      
-                     
+                    <div class="item"> <img src="static/css/images/668x328.jpg" alt="">
+                      <div class="carousel-caption">
+                        <h1><a href="#"> Aliquam malesuada diam eget turpis varius 3</a></h1>
+                      </div>
                     </div>
-                    <div class="item"> <img  src="static/css/images/668x328.jpg" alt="">
-                     
-                        
-                 
+                    <div class="item"> <img src="static/css/images/668x328.jpg" alt="">
+                      <div class="carousel-caption">
+                        <h1><a href="#"> Aliquam malesuada diam eget turpis varius 4</a></h1>
+                      </div>
                     </div>
                   </div>
                   <a class="left left_slide" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a> <a class="right right_slide" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a></div>
               </div>
-              <br>
               <div class="single_category wow fadeInDown">
-              	
                 <div class="category_title"> <a href="pages/category-archive.html">Destaque</a></div>
-                	<br>
-                	<div class="col-sm-6">
-                	  <br>
-                      <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=2 %}"> <img src="static/css/images/img-cot-uber.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="pages/single_page.html">UBER começa em manaus</a>
-                      <div class="sing_commentbox">
-                        <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                        <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                    
-                
-                <!-- <div class="single_category_inner"> 
-                	
+                <div class="single_category_inner">
                   <ul class="catg_nav">
                     <li>
                     
                       <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=1 %}"> <img src="static/css/images/img-cultura-show_PAUL.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="templates/radiosite/pages/single_page.html"> Show Paul em MAnaus</a>
+                      <a class="catg_title" href="templates/radiosite/pages/single_page.html"> Curabitur ac dictum nisl eu hendrerit ante</a>
                       <div class="sing_commentbox">
                         <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
                         <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
@@ -202,7 +192,7 @@
                     <li>
                     
                       <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=2 %}"> <img src="static/css/images/img-cot-uber.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="pages/single_page.html">UBER começa em manaus</a>
+                      <a class="catg_title" href="pages/single_page.html">Fusce eu nulla semper porttitor felis sit amet</a>
                       <div class="sing_commentbox">
                         <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
                         <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
@@ -223,20 +213,31 @@
                         <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
                    </li>
                   </ul>
-                </div>-->
                 </div>
-                <div class="col-sm-6">
-                	  <br>
-                      <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="static/css/images/310x150.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="pages/single_page.html"> Curabitur ac dictum nisl eu hendrerit ante</a>
+              </div>
+              <div class="single_category  wow fadeInDown">
+                <div class="category_title"> <a href="pages/category-archive.html">Cultura</a></div>
+                <div class="single_category_inner">
+                  <ul class="catg_nav catg_nav2">
+                    <li>
+                      <div class="catgimg_container"> <a class="catg1_img" href="#"> <img src="static/css/images/310x300.jpg" alt=""> </a></div>
+                      <a class="catg_title" href="#"> Curabitur ac dictum nisl eu hendrerit ante</a>
                       <div class="sing_commentbox">
                         <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                        <a href="pages/single_page.html"><i class="fa fa-comments"></i>20 Comments</a></div>
-                 
+                        <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                      <p class="post-summary">Suspendisse mauris dui, interdum vitae vehicula ut, posuere sed lectus. Nulla facilisi. Curabitur...</p>
+                   </li>
+                    <li>
+                      <div class="catgimg_container"> <a class="catg1_img" href="#"> <img src="static/css/images/310x300.jpg" alt=""> </a></div>
+                      <a class="catg_title" href="#">Fusce eu nulla semper porttitor felis sit amet</a>
+                      <div class="sing_commentbox">
+                        <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+                        <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                      <p class="post-summary">Suspendisse mauris dui, interdum vitae vehicula ut, posuere sed lectus. Nulla facilisi. Curabitur...</p>
+                   </li>
+                  </ul>
                 </div>
-                <!--  -->
               </div>
-              
               <div class="category_three_fourarea  wow fadeInDown">
                 <div class="category_three">
                   <div class="single_category">
@@ -357,23 +358,6 @@
                 <div class="category_title"> <a href="#">Radialistas</a></div>
                 <div class="single_category_inner">
                   <ul class="catg3_snav catg5_nav">
-                  	<li>
-                      <div class="media"> 
-                          <div class="card">
-			                <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
-			                <div class="avatar">
-			                    <img src="" alt="" />
-			                </div>
-			                <div class="content">
-			                     <p>Curica</p>
-		                       Programa tal<br>
-		                       espostes<br>
-		                       das 10:00hr às 12:00hr
-			                </div>
-	            	  </div>
-                      <img class="src-image"  src="static/css/images/belinha.jpg" />
-                      </div>
-                    </li>
                     <li>
                       <div class="card">
 		                <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
@@ -381,13 +365,13 @@
 		                    <img src="" alt="" />
 		                </div>
 		                <div class="content">
-		                    <p>Geneses</p>
-		                       Programa Geneses Rodrigues<br>
-		                       sexta e sábado<br>
-		                       das 13:00hr às 15:00hr
+		                    <p>Paulo Sergio</p>
+		                       Programa tal<br>
+		                       Variedades<br>
+		                       das 10:00hr às 12:00hr
 		                </div>
 	            	  </div>
-                      <img class="src-image"  src="static/css/images/geneses.jpg" />      
+                      <img class="src-image"  src="static/css/images/belinha.jpg" />      
                     </li>
                     <li>
                       <div class="media"> 
@@ -397,13 +381,13 @@
 			                    <img src="" alt="" />
 			                </div>
 			                <div class="content">
-			                    <p>J.I</p>
-		                       Programa Zona Flash Dance<br>
-		                       terça a sábado<br>
-		                       das 15:00hr às 18:00hr
+			                    <p>Paulo Sergio</p>
+		                       Programa tal<br>
+		                       Variedades<br>
+		                       das 10:00hr às 12:00hr
 			                </div>
 	            	  </div>
-                      <img class="src-image"  src="static/css/images/JI.jpg" />
+                      <img class="src-image"  src="static/css/images/belinha.jpg" />
                       </div>
                     </li>
                     <li>
@@ -415,15 +399,14 @@
 			                </div>
 			                <div class="content">
 			                     <p>Paulo Sergio</p>
-		                       Programa Mistura do PS<br>
-		                       segunda a domingo<br>
-		                       das 11:00hr às 13:00hr
+		                       Programa tal<br>
+		                       Variedades<br>
+		                       das 10:00hr às 12:00hr
 			                </div>
 	            	  </div>
-                      <img class="src-image"  src="static/css/images/Paulo Sergio.jpg" />
+                      <img class="src-image"  src="static/css/images/belinha.jpg" />
                       </div>
                     </li>
-                    
                     <li>
                       <div class="media"> 
                           <div class="card">
@@ -432,16 +415,49 @@
 			                    <img src="" alt="" />
 			                </div>
 			                <div class="content">
-			                     <p>Roberto Feijó</p>
-		                       Programa Super manhã 104<br>
+			                     <p>Paulo Sergio</p>
+		                       Programa tal<br>
 		                       Variedades<br>
-		                       das 08:00hr às 11:00hr
+		                       das 10:00hr às 12:00hr
 			                </div>
 	            	  </div>
-                      <img class="src-image"  src="static/css/images/Roberto Feijo.jpg" />
+                      <img class="src-image"  src="static/css/images/belinha.jpg" />
                       </div>
                     </li>
-                    
+                    <li>
+                      <div class="media"> 
+                          <div class="card">
+			                <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
+			                <div class="avatar">
+			                    <img src="" alt="" />
+			                </div>
+			                <div class="content">
+			                     <p>Paulo Sergio</p>
+		                       Programa tal<br>
+		                       Variedades<br>
+		                       das 10:00hr às 12:00hr
+			                </div>
+	            	  </div>
+                      <img class="src-image"  src="static/css/images/belinha.jpg" />
+                      </div>
+                    </li>
+                    <li>
+                      <div class="media"> 
+                          <div class="card">
+			                <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
+			                <div class="avatar">
+			                    <img src="" alt="" />
+			                </div>
+			                <div class="content">
+			                     <p>Paulo Sergio</p>
+		                       Programa tal<br>
+		                       Variedades<br>
+		                       das 10:00hr às 12:00hr
+			                </div>
+	            	  </div>
+                      <img class="src-image"  src="static/css/images/belinha.jpg" />
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -508,12 +524,127 @@
                   </ul>
                 </div>
               </div>
-              
               <div class="single_leftbar wow fadeInDown">
                 <h2><span>Anuncio lado direito</span></h2>
                 <div class="singleleft_inner"> <a href="#"><img alt="" src="static/css/images/262x218.jpg"></a></div>
               </div>
-             
+              <!-- <div class="single_leftbar wow fadeInDown">
+                <ul class="nav nav-tabs custom-tabs" role="tablist">
+                  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Most Popular</a></li>
+                  <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Most Reader</a></li>
+                  <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Recent Comment</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane fade in active" id="home">
+                    <ul class="catg3_snav ppost_nav wow fadeInDown">
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                    </ul>
+                  </div>
+                  <div role="tabpanel" class="tab-pane fade" id="profile">
+                    <ul class="catg3_snav ppost_nav wow fadeInDown">
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                    </ul>
+                  </div>
+                  <div role="tabpanel" class="tab-pane fade" id="messages">
+                    <ul class="catg3_snav ppost_nav wow fadeInDown">
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                      <li>
+                        <div class="media"> <a class="media-left" href="#"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                          <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a></div>
+                        </div>
+                     </li>
+                    </ul>
+                  </div>
+                </div>
+              </div> -->
+              <!--  -->
               <div class="single_leftbar wow fadeInDown">
                 <h2><span>Blog Archive</span></h2>
                 <div class="singleleft_inner">
@@ -527,21 +658,19 @@
                   </div>
                 </div>
               </div>
-              
               <div class="single_leftbar wow fadeInDown">
                 <h2><span>Labels</span></h2>
                 <div class="singleleft_inner">
                   <ul class="label_nav">
-                    <li><a href="#">Artes</a></li>
-                    <li><a href="#">Politica</a></li>
-                    <li><a href="#">Comedia</a></li>
-                    <li><a href="#">Esportes</a></li>
-                    <li><a href="#">Cotidiano</a></li>
-                    <li><a href="#">Videos</a></li>
+                    <li><a href="#"> Artes</a></li>
+                    <li><a href="#"><b>&#8227</b> Politica</a></li>
+                    <li><a href="#"><b>&#8227</b> Comedia</a></li>
+                    <li><a href="#"><b>&#8227</b> Esportes</a></li>
+                    <li><a href="#"><b>&#8227</b> Cotidiano</a></li>
+                    <li><a href="#"><b>&#8227</b> Videos</a></li>
                   </ul>
                 </div>
               </div>
-              
               <div class="single_leftbar wow fadeInDown">
                 <h2><span>Links</span></h2>
                 <div class="singleleft_inner">
@@ -560,182 +689,35 @@
       </div>
     </section>
     <footer id="footer">
-    	
       <div class="footer_top">
         <div class="col-lg-9 col-md-9 col-sm-6">
           <div class="single_footer_top wow fadeInLeft">
-            
-            
-			<h2>Galeria</h2>
+            <h2>Galeria</h2>
             <div class="subscribe_area">
               <p>"Galeria de fotos dos eventos e colaboradores da Radio Anori FM"</p>
-              	<!-- <div class="container"> -->
-				    <h1>Bootstrap Image Gallery Demo</h1>
-				    <br>
-				    <!-- The container for the list of example images -->
-				    <div id="links">
-				        <a data-gallery="" title="Natalia" href="http://farm4.static.flickr.com/3741/11188919165_b73f1ddc32_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3741/11188919165_b73f1ddc32_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Delft Touch in the kitchen" href="http://farm4.static.flickr.com/3812/11188050815_5e8cccf0f6_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3812/11188050815_5e8cccf0f6_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Father Figure Project: The Social Construct" href="http://farm4.static.flickr.com/3703/11191153143_04bbbc8301_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3703/11191153143_04bbbc8301_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Higherbeams." href="http://farm4.static.flickr.com/3821/11190956343_09b8022ea2_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3821/11190956343_09b8022ea2_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Contact" href="http://farm8.static.flickr.com/7325/11186917235_003d9df5d6_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7325/11186917235_003d9df5d6_s.jpg">
-				        </a>
-				        <a data-gallery="" title="The Track" href="http://farm6.static.flickr.com/5501/11186913445_c88dd25c59_b.jpg">
-				            <img src="http://farm6.static.flickr.com/5501/11186913445_c88dd25c59_s.jpg">
-				        </a>
-				        <a data-gallery="" title="TheHallsOfAdoration" href="http://farm4.static.flickr.com/3715/11186895035_8596236621_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3715/11186895035_8596236621_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Si me dijeran pide un deseo" href="http://farm8.static.flickr.com/7414/11190086653_e330723a8c_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7414/11190086653_e330723a8c_s.jpg">
-				        </a>
-				        <a data-gallery="" title="untitled" href="http://farm3.static.flickr.com/2891/11188743634_f339e72b79_b.jpg">
-				            <img src="http://farm3.static.flickr.com/2891/11188743634_f339e72b79_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Loch Ba" href="http://farm8.static.flickr.com/7390/11187408694_9dd7188ca8_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7390/11187408694_9dd7188ca8_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Remarkable Rocks 2" href="http://farm3.static.flickr.com/2831/11187401055_1e498bde13_b.jpg">
-				            <img src="http://farm3.static.flickr.com/2831/11187401055_1e498bde13_s.jpg">
-				        </a>
-				        
-				        <a data-gallery="" title="Blue Patricia Lake" href="http://farm4.static.flickr.com/3720/11190734053_7cf9749bdb_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3720/11190734053_7cf9749bdb_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Goblin Brute" href="http://farm4.static.flickr.com/3740/11186937956_d8d8422169_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3740/11186937956_d8d8422169_s.jpg">
-				        </a>
-				        <a data-gallery="" title="." href="http://farm8.static.flickr.com/7421/11191341825_b2bf635f25_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7421/11191341825_b2bf635f25_s.jpg">
-				        </a>
-				        
-				        <a data-gallery="" title="Lofoten Islands" href="http://farm4.static.flickr.com/3788/11193226453_fd9b06008c_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3788/11193226453_fd9b06008c_s.jpg">
-				        </a>
-				        <a data-gallery="" title="もみじ" href="http://farm4.static.flickr.com/3737/11189043544_e992a227d3_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3737/11189043544_e992a227d3_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Nocturna en Albarracín./ Nocturne near Albarracín (Teruel, Spain)." href="http://farm8.static.flickr.com/7455/11187819606_c008b36106_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7455/11187819606_c008b36106_s.jpg">
-				        </a>
-				        <a data-gallery="" title="DIAMOND IN THE ROUGH" href="http://farm8.static.flickr.com/7319/11188792234_dfea30f688_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7319/11188792234_dfea30f688_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Imperfection" href="http://farm3.static.flickr.com/2817/11188666563_091e4bb4b4_b.jpg">
-				            <img src="http://farm3.static.flickr.com/2817/11188666563_091e4bb4b4_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Late Again" href="http://farm6.static.flickr.com/5531/11186088035_98d5c7be84_b.jpg">
-				            <img src="http://farm6.static.flickr.com/5531/11186088035_98d5c7be84_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Canyons" href="http://farm6.static.flickr.com/5502/11189048145_f234c1c4a1_b.jpg">
-				            <img src="http://farm6.static.flickr.com/5502/11189048145_f234c1c4a1_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Brouillard sur Lanaud" href="http://farm6.static.flickr.com/5477/11193030495_dc7d99caff_b.jpg">
-				            <img src="http://farm6.static.flickr.com/5477/11193030495_dc7d99caff_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Incontri di lavoro" href="http://farm8.static.flickr.com/7333/11189762165_7092588e1f_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7333/11189762165_7092588e1f_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Tijdens de wandeling terug van De panne naar Oostduinkerke" href="http://farm6.static.flickr.com/5542/11186573045_89102139d2_b.jpg">
-				            <img src="http://farm6.static.flickr.com/5542/11186573045_89102139d2_s.jpg">
-				        </a>
-				        <a data-gallery="" title="absorbed" href="http://farm4.static.flickr.com/3751/11194208465_ccfb0df6d3_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3751/11194208465_ccfb0df6d3_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Metal,  Steam and Dedication.  North Yorkshire Moors Railway." href="http://farm6.static.flickr.com/5531/11189794436_99c1e0dcfd_b.jpg">
-				            <img src="http://farm6.static.flickr.com/5531/11189794436_99c1e0dcfd_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Tutorial tuesday" href="http://farm4.static.flickr.com/3767/11194056215_786a05dcb9_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3767/11194056215_786a05dcb9_s.jpg">
-				        </a>
-				        
-				        <a data-gallery="" title="Histoire comme ça" href="http://farm3.static.flickr.com/2821/11187333644_25ae318b9a_b.jpg">
-				            <img src="http://farm3.static.flickr.com/2821/11187333644_25ae318b9a_s.jpg">
-				        </a>
-				        <a data-gallery="" title="" href="http://farm4.static.flickr.com/3797/11186343795_9e20e0a0d0_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3797/11186343795_9e20e0a0d0_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Alice" href="http://farm6.static.flickr.com/5501/11190429845_6b3bf13263_b.jpg">
-				            <img src="http://farm6.static.flickr.com/5501/11190429845_6b3bf13263_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Irreversible" href="http://farm8.static.flickr.com/7437/11188139865_91b1fbb522_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7437/11188139865_91b1fbb522_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Kurhaus Binz" href="http://farm8.static.flickr.com/7311/11194373534_956b5e79d9_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7311/11194373534_956b5e79d9_s.jpg">
-				        </a>
-				        <a data-gallery="" title="the lure of the easter lily" href="http://farm8.static.flickr.com/7365/11194393934_297a0bb9e2_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7365/11194393934_297a0bb9e2_s.jpg">
-				        </a>
-				        <a data-gallery="" title="What's Inside My Bag" href="http://farm4.static.flickr.com/3780/11189972615_a62b8c7213_b.jpg">
-				            <img src="http://farm4.static.flickr.com/3780/11189972615_a62b8c7213_s.jpg">
-				        </a>
-				        <a data-gallery="" title="photo boillon christophe / photo macro au carré syrphe & fleur de lys / le souvenir du regard d'un insecte n°2" href="http://farm8.static.flickr.com/7385/11191819703_75990b9d9b_b.jpg">
-				            <img src="http://farm8.static.flickr.com/7385/11191819703_75990b9d9b_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Please Don't Jump!" href="http://farm3.static.flickr.com/2859/11195652165_7a406e0d7c_b.jpg">
-				            <img src="http://farm3.static.flickr.com/2859/11195652165_7a406e0d7c_s.jpg">
-				        </a>
-				        <a data-gallery="" title="Please Don't Jump!" href="http://farm3.static.flickr.com/2859/11195652165_7a406e0d7c_b.jpg">
-				            <img src="http://farm3.static.flickr.com/2859/11195652165_7a406e0d7c_s.jpg">
-				        </a>
-				     </div>
-				        
-				     
+              	<div id="myGallery">
+              		<img src="static/css/images/70x70.jpg" style="padding: 10px; margin: 5px" />
+				    <img src="static/css/images/img-cot-uber.jpg" />
+				    <img src="static/css/images/img-loteria.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    <img src="static/css/images/70x70.jpg" />
+				    
+				    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+					<script type="text/javascript" src="jquery.balanced-gallery.min.js"></script>
               	</div>
-             </div>
+              	
+            </div>
+          </div>
         </div>
-              	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-				<!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
-				<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-				<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-				<script src="https://raw.github.com/blueimp/Bootstrap-Image-Gallery/master/js/bootstrap-image-gallery.js"></script>
-				<script src="https://raw.github.com/blueimp/Bootstrap-Image-Gallery/master/js/demo.js"></script>
-						
-				<div id="blueimp-gallery" class="blueimp-gallery">
-				    <!-- The container for the modal slides -->
-				    <div class="slides"></div>
-				    <!-- Controls for the borderless lightbox -->
-				    <h3 class="title"></h3>
-				    <a class="prev">‹</a>
-				    <a class="next">›</a>
-				    <a class="close">×</a>
-				    <a class="play-pause"></a>
-				    <ol class="indicator"></ol>
-				    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-				    <div class="modal fade">
-				        <div class="modal-dialog">
-				            <div class="modal-content">
-				                <div class="modal-header">
-				                    <button type="button" class="close" aria-hidden="true">×</button>
-				                    <h4 class="modal-title"></h4>
-				                </div>
-				                <div class="modal-body next"></div>
-				                <div class="modal-footer">
-				                    <button type="button" class="btn btn-default pull-left prev">
-				                        <i class="glyphicon glyphicon-chevron-left"></i>
-				                        Previous
-				                    </button>
-				                    <button type="button" class="btn btn-primary next">
-				                        Next
-				                        <i class="glyphicon glyphicon-chevron-right"></i>
-				                    </button>
-				                </div>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-            <!-- </div> -->
-       
        
         <div class="col-lg-3 col-md-3 col-sm-6">
           <div class="single_footer_top wow fadeInRight">
@@ -765,17 +747,20 @@
             <li><a class="tootlip" data-toggle="tooltip" data-placement="top" title="Rss" href="#"><i class="fa fa-rss"></i></a></li>
           </ul>
         </div>
-      </div> 
+      </div>
     </footer>
   </div>
 </div>
-<script type="text/javascript" src="static/css/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="static/css/assets/js/wow.min.js"></script>
-<script type="text/javascript" src="static/css/assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/css/assets/js/slick.min.js"></script>
-<script type="text/javascript" src="static/css/assets/js/jquery.li-scroller.1.0.js"></script>
-<script type="text/javascript" src="static/css/assets/js/custom.js"></script>
-<script type="text/javascript" src="static/js/perfil-radialista.js"></script>
+<script src="static/css/assets/js/jquery.min.js"></script>
+<script src="static/css/assets/js/wow.min.js"></script>
+<script src="static/css/assets/js/bootstrap.min.js"></script>
+<script src="static/css/assets/js/slick.min.js"></script>
+<script src="static/css/assets/js/jquery.li-scroller.1.0.js"></script>
+<script src="static/css/assets/js/custom.js"></script>
+<script src="static/js/perfil-radialista.js"></script>
+<script src="static/js/galeria.js"></script>
+
+
 
 </body>
 </html>

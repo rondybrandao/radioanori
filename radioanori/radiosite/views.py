@@ -4,7 +4,7 @@ from .models import Post, Loteria, Megasena
 from .form import PostForm
 from django.shortcuts import redirect
 from radiosite import form
-from django.core.files.uploadedfile import UploadedFile
+
 
 
 def index(request):

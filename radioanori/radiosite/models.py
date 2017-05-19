@@ -51,7 +51,7 @@ class Loteria(models.Model):
         
         # abri arquivo loteria.txt e relaciona dta com valores
         scriptpath = os.path.dirname(__file__)
-        filename = os.path.join(scriptpath, 'teste_lotofacil.txt')
+        filename = os.path.join(scriptpath, 'lotofacil.txt')
         f=open(filename)
         
         dic = {}
@@ -59,7 +59,7 @@ class Loteria(models.Model):
             # y = str(linha.strip().split())   
             y = str(linha.split())
             
-            dic[y[1:18]] = y[20:107]
+            dic[y[1:20]] = y[20:107]
             # dic[y[0:2]] = y[4:19]
         
         f.close()
@@ -122,7 +122,7 @@ class Loteria(models.Model):
         for v_key, value_v in cont_key_concurso.items():
             #print(v_key)
             #for concurso_key, concurso_value in concurso.items():    
-            if value_v == 2:
+            if value_v == 9:
                 for i in range(0, len(b)):
                     v_key = str(v_key).replace(b[i], "")
                     value_v = str(value_v).replace(b[i], "")
@@ -135,7 +135,7 @@ class Loteria(models.Model):
                 r.append(resultado_usuario[v_key])
                 r.append(value_v)
                 
-            if value_v == 3:
+            if value_v == 10:
                 for i in range(0, len(b)):
                     v_key = str(v_key).replace(b[i], "")
                     value_v = str(value_v).replace(b[i], "")
@@ -150,7 +150,7 @@ class Loteria(models.Model):
                 r.append(value_v)
                 
                 
-            if value_v == 4:
+            if value_v == 11:
                 for i in range(0, len(b)):
                     v_key = str(v_key).replace(b[i], "")
                     value_v = str(value_v).replace(b[i], "")
