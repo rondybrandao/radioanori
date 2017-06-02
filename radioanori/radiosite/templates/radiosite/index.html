@@ -92,7 +92,9 @@
                   <ul class="recentpost_nav wow fadeInDown">
                     <li><a href="{% url 'loteria' %}"><img src="static/css/images/img-loteria.jpg" alt=""></a> <a class="recent_title" href="pages/single_page.html"> Loteria</a></li>
                     <li><a href="http://www.portaldatransparencia.gov.br/PortalTransparenciaListaAcoes.asp?Exercicio=2017&SelecaoUF=1&SiglaUF=AM&CodMun=0203"><img src="static/css/images/ico-servicos-transparencia.jpg" alt=""></a> <a class="recent_title" href="pages/single_page.html"> Portal da Tranparencia</a></li>
-                    <li><a href="templates/radiosite/pages/single_page.html"><img src="static/css/images/ico-servicos-mapa.jpeg" alt=""></a> <a class="recent_title" href="pages/single_page.html"> Mapa</a></li>
+                    <li><a href="{% url 'post_classificados' %}"><img src="static/css/images/ico-servico-classificados.jpg" alt=""></a> <a class="recent_title" href="pages/single_page.html"> Classificados</a></li>
+                    <li><a href="{% url 'post_classificados' %}"><img src="static/css/images/ico-servicos-mapa.jpeg" alt=""></a> <a class="recent_title" href="pages/single_page.html"> Mapa</a></li>
+                    
                   </ul>
                 </div>
               </div>
@@ -100,41 +102,7 @@
                 <h2><span>Anuncio</span></h2>
                 <div class="singleleft_inner"> <a href="#"><img src="static/css/images/150x600.jpg" alt=""></a></div>
               </div>
-              <div class="singleleft_inner">
-                  <ul class="catg3_snav  wow fadeInDown">
-                    <li>
-                      <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title_anuncio">Celular sansung s5</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Moto Honda CG 125cc</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Vendo casa no bairro do japão</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Alugo casa no centro</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Moto Honda CG 225cc</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title_anuncio">Moto Honda CG 225cc</a></div>
-                      </div>
-                   </li>
-                    
-                  </ul>
-                </div>
+              
             </div>
           </div>
         </div>
@@ -150,12 +118,12 @@
                     <li data-target="#myCarousel" data-slide-to="3"></li>
                   </ol>
                   <div class="carousel-inner" role="listbox">
-                    <div class="item active" > <img src="static/css/images/albert-einstein-filha.png" alt="">
+                    <div class="item active" > <img src="static/css/images/668x328.jpg" alt="">
                       
                         
                       
                     </div>
-                    <div class="item"> <img src="static/css/images/belinha.jpg" alt="">
+                    <div class="item"> <img src="static/css/images/668x328.jpg" alt="">
                       
                         
                      
@@ -173,9 +141,9 @@
                   </div>
                   <a class="left left_slide" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a> <a class="right right_slide" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a></div>
               </div>
-              <br>
+            
               <div class="single_category wow fadeInDown">
-              	
+               <br>
                 <div class="category_title"> <a href="pages/category-archive.html">Destaque</a></div>
                 	<br>
                 	<div class="col-sm-6">
@@ -452,12 +420,12 @@
           <div class="row">
             <div class="right_bar">
               <div class="single_leftbar wow fadeInDown">
-                <h2><span>Mais Lidas</span></h2>
+                <h2><span>Classificados</span></h2>
                 <div class="singleleft_inner">
                   <ul class="catg3_snav ppost_nav wow fadeInDown">
                     <li>
-                      <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' %}" class="media-left"> <img alt="" src="http://placekitten.com/200/126"> </a>
+                        <div class="media-body"> <a href="{% url 'post_anuncio-detail' %}" class="catg_title"> Gatinho a venda</a></div>
                       </div>
                    </li>
                     <li>
@@ -515,45 +483,19 @@
               </div>
              
               <div class="single_leftbar wow fadeInDown">
-                <h2><span>Blog Archive</span></h2>
+                <h2><span>Arquivos Radio Anori</span></h2>
                 <div class="singleleft_inner">
                   <div class="blog_archive">
                     <form action="#">
                       <select>
-                        <option value="">Blog Archive</option>
-                        <option value="">October(20)</option>
+                        <option value="">Arquivos Radio Anori</option>
+                        <option value="">em construção</option>
                       </select>
                     </form>
                   </div>
                 </div>
               </div>
               
-              <div class="single_leftbar wow fadeInDown">
-                <h2><span>Labels</span></h2>
-                <div class="singleleft_inner">
-                  <ul class="label_nav">
-                    <li><a href="#">Artes</a></li>
-                    <li><a href="#">Politica</a></li>
-                    <li><a href="#">Comedia</a></li>
-                    <li><a href="#">Esportes</a></li>
-                    <li><a href="#">Cotidiano</a></li>
-                    <li><a href="#">Videos</a></li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div class="single_leftbar wow fadeInDown">
-                <h2><span>Links</span></h2>
-                <div class="singleleft_inner">
-                  <ul class="link_nav">
-                    <li><a href="#">Blog Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Error Page</a></li>
-                    <li><a href="#">Wpfreeware</a></li>
-                    <li><a href="#">Facebook Account</a></li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -570,7 +512,7 @@
             <div class="subscribe_area">
               <p>"Galeria de fotos dos eventos e colaboradores da Radio Anori FM"</p>
               	<!-- <div class="container"> -->
-				    <h1>Bootstrap Image Gallery Demo</h1>
+				    
 				    <br>
 				    <!-- The container for the list of example images -->
 				    <div id="links">
@@ -776,6 +718,7 @@
 <script type="text/javascript" src="static/css/assets/js/jquery.li-scroller.1.0.js"></script>
 <script type="text/javascript" src="static/css/assets/js/custom.js"></script>
 <script type="text/javascript" src="static/js/perfil-radialista.js"></script>
+
 
 </body>
 </html>

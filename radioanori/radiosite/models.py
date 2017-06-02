@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from phonenumber_field.modelfields import PhoneNumberField
 import os
 
 class Comentario(models.Model):
@@ -298,3 +299,20 @@ class Megasena(models.Model):
         self.data_loteria = data_encontrada_11
         self.acerto_loteria = acerto_encontrado_11
         self.result = r
+
+class Anuncio(models.Model):
+    titulo = models.CharField(max_length=30)
+    valor = models.FloatField(null=True, blank=True)
+    contato = PhoneNumberField(blank=True)
+    descricao = models.TextField()
+    imagem = models.FileField(null=True, blank=True)
+    data = models.DateTimeField(default=timezone.now)
+    
+    def __unicode__(self):
+        return self.titulo
+    
+    def __str__(self):
+        return self.titulo
+    
+    class Meta:
+        ordering = ["-data"]

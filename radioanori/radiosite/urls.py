@@ -14,5 +14,9 @@ urlpatterns = [
     url(r'^lotofacil/$', views.pesquisar_lotofacil, name='pesquisa'),
     url(r'^megasena$', views.pesquisar_megasena, name='pesquisa'),
     url(r'^megasena-result/$', views.pesquisar_megasena_result, name='pesquisa'),
+    #url(r'^anuncio/$', views.post_anuncio, name='post_anuncio'),
+    url(r'^anuncio-detail$', views.post_anuncio, name='post_anuncio-detail'),
+    url(r'^classificados$', views.post_classificados, name='post_classificados'),
+    #url(r'^anunciar/$', views.anunciar, name='pesquisa'),
     #url(r'^pages/$', views.single_page, name='single_page'),
 ] 

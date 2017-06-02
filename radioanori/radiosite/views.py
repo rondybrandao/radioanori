@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Loteria, Megasena
-from .form import PostForm
+from .models import Post, Loteria, Megasena, Anuncio
+from .form import PostForm, PostFormClassificado
 from django.shortcuts import redirect
 from radiosite import form
+from django.http import HttpResponseRedirect
 
 
 
@@ -103,6 +104,24 @@ def pesquisar_megasena_result(request):
     else:
         entrada =Megasena()  
     return render(request, 'radiosite/megasena-result.html', {'entrada': entrada})
+
+def post_anuncio(request):
+    #anuncio = get_object_or_404(Anuncio)
+    return render(request, 'radiosite/anuncio_teste.html')
+
+def post_classificados(request):
+    form = PostFormClassificado(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        #menssagem de sucesso
+        #messages.success(request, "Enviado com sucesso!")
+        return HttpResponseRedirect('classificados')
+    context = {
+        "form":form,
+    }
+    return render(request, "radiosite/form_classificado.html", context)
+
 
 '''     
 def search_result(self):
