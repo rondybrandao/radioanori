@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" class="post-form" action="/form-classificado/" enctype='multipart/form-data'>
+		{% csrf_token %}
+		<label>Titulo</label>
+		<input type="text" name="titulo"><br>
+		
+		<label>Valor</label>
+		<input type="text" name="valor"><br>
+		
+		<label>Descrição</label>
+		<input type="text" name="descricao"><br>
+		
+		<label>Contato</label>
+		<input type="text" name="contato"><br>
+		
+		<label>Imagem</label>
+		<input type="image" name="imagem_anuncio"><br>
+		
+		<input type="button" name="enviar">	
+	</form>
+
+</body>
+</html>

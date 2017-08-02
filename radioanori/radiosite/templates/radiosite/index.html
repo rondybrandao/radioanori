@@ -92,7 +92,7 @@
                   <ul class="recentpost_nav wow fadeInDown">
                     <li><a href="{% url 'loteria' %}"><img src="static/css/images/img-loteria.jpg" alt=""></a> <a class="recent_title" href="pages/single_page.html"> Loteria</a></li>
                     <li><a href="http://www.portaldatransparencia.gov.br/PortalTransparenciaListaAcoes.asp?Exercicio=2017&SelecaoUF=1&SiglaUF=AM&CodMun=0203"><img src="static/css/images/ico-servicos-transparencia.jpg" alt=""></a> <a class="recent_title" href="pages/single_page.html"> Portal da Tranparencia</a></li>
-                    <li><a href="{% url 'post_classificados' %}"><img src="static/css/images/ico-servico-classificados.jpg" alt=""></a> <a class="recent_title" href="pages/single_page.html"> Classificados</a></li>
+                    <li><a href="{% url 'add_form' %}"><img src="static/css/images/ico-servico-classificados.jpg" alt=""></a> <a class="recent_title" href="{% url 'add_form' %}"> Classificados</a></li>
                     <li><a href="{% url 'post_classificados' %}"><img src="static/css/images/ico-servicos-mapa.jpeg" alt=""></a> <a class="recent_title" href="pages/single_page.html"> Mapa</a></li>
                     
                   </ul>
@@ -424,52 +424,52 @@
                 <div class="singleleft_inner">
                   <ul class="catg3_snav ppost_nav wow fadeInDown">
                     <li>
-                      <div class="media"> <a href="{% url 'post_anuncio-detail' %}" class="media-left"> <img alt="" src="http://placekitten.com/200/126"> </a>
-                        <div class="media-body"> <a href="{% url 'post_anuncio-detail' %}" class="catg_title"> Gatinho a venda</a></div>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=12 %}" class="media-left"> <img src='{{anuncio_02.imagem.url}}' class='img-resp' /> </a>
+                        <div class="media-body"> <a href="{% url 'post_anuncio-detail' pk=12 %}" class="catg_title"> {{anuncio_01.titulo}}</a></div>
                       </div>
                    </li>
                     <li>
-                      <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
+                      <div class="media"> <a href="{% url 'anuncio-detail' pk=12   %}" class="media-left"> <img alt="" src='{{anuncio_02.imagem.url}}' class='img-resp' /> </a>
+                        <div class="media-body"> <a href="#" class="catg_title"> {{anuncio_02.titulo}}</a></div>
+                      </div>
+                   </li>
+                    <li>
+                      <div class="media "> <a href="{% url 'form_detail' pk=39   %}" class="media-left"> <img src='{{anuncio_03.image.url}}' class='img-resp' /> </a>
+                        <div class="media-body"> <a href="#" class="catg_title"> {{anuncio_03.profile.titulo}} </a></div>
+                      </div>
+                   </li>
+                    <li>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=9 %}" class="media-left"> <img alt="" src='{{anuncio_04.imagem.url}}' class='img-resp' /> </a>
                         <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
                       </div>
                    </li>
                     <li>
-                      <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=8 %}" class="media-left"> <img alt="" src='{{anuncio_05.imagem.url}}' class='img-resp' /> </a>
                         <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
                       </div>
                    </li>
                     <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=6 %}" class="media-left"> <img alt="" src='{{anuncio_06.imagem.url}}' class='img-resp' /> </a>
+                        <div class="media-body"> <a href="#" class="catg_title"> {{anuncio_04.titulo}}</a></div>
+                      </div>
+                   </li>
+                    <li>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=6 %}" class="media-left"> <img alt="" src='{{anuncio_07.imagem.url}}' class='img-resp' /> </a>
                         <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
                       </div>
                    </li>
                     <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=12 %}" class="media-left"> <img alt="" src='{{anuncio_08.imagem.url}}' class='img-resp' /> </a>
+                        <div class="media-body"> <a href="#" class="catg_title"> {{anuncio_08.titulo}}</a></div>
                       </div>
                    </li>
                     <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=13 %}" class="media-left"> <img alt="" src='{{anuncio_09.imagem.url}}' class='img-resp' /> </a>
+                        <div class="media-body"> <a href="{% url 'post_anuncio-detail' pk=13 %}" class="catg_title"> {{anuncio_10.titulo}}</a></div>
                       </div>
                    </li>
                     <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src="static/css/images/70x70.jpg"> </a>
+                      <div class="media"> <a href="#" class="media-left"> <img alt="" src='{{anuncio_10.imagem.url}}' class='img-resp' /> </a>
                         <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
                       </div>
                    </li>

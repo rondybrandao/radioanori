@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
-from phonenumber_field.modelfields import PhoneNumberField
 import os
+from django.forms.models import ModelForm
+from django.db.models.fields.related import ForeignKey
+from django.utils.translation import ugettext_lazy as _
 
 class Comentario(models.Model):
     author = models.ForeignKey('auth.User')
@@ -19,7 +21,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
-    comentario = models.ManyToManyField(Comentario)
+    #comentario = models.ManyToManyField(Comentario)
     
     created_date = models.DateTimeField(
             default=timezone.now)
@@ -300,19 +302,48 @@ class Megasena(models.Model):
         self.acerto_loteria = acerto_encontrado_11
         self.result = r
 
+class Anuncio_imagens(models.Model):
+    #anuncio = models.ForeignKey(Anuncio, on_delete=models.CASCADE)
+    imagem = models.FileField(upload_to="files/%Y/%m/%d")
+     
 class Anuncio(models.Model):
+    #user=models.ForeignKey(Anuncio, on_delete=models.CASCADE, related_name='anuncio')
+    
     titulo = models.CharField(max_length=30)
     valor = models.FloatField(null=True, blank=True)
-    contato = PhoneNumberField(blank=True)
+    contato = models.CharField(max_length=30, null=True,)
     descricao = models.TextField()
     imagem = models.FileField(null=True, blank=True)
     data = models.DateTimeField(default=timezone.now)
     
     def __unicode__(self):
-        return self.titulo
+        return self.titulo 
     
     def __str__(self):
         return self.titulo
     
     class Meta:
         ordering = ["-data"]
+
+    
+class Attachment(models.Model):
+    message = ForeignKey(Anuncio, verbose_name=_('Anuncio'), null=True)
+    file = models.FileField(upload_to='attachments')
+
+class Image(models.Model):
+    image = models.FileField()
+    profile = models.ForeignKey(Anuncio)
+    cont = models.IntegerField()
+    
+    def __str__(self):
+        return self.profile.titulo
+
+    def contador(self):
+        self.cont = self.cont + 1
+        return self.cont
+        
+class AnuncioForm(ModelForm):
+    
+    class Meta:
+        model = Anuncio
+        fields = '__all__'

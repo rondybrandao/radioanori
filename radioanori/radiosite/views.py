@@ -1,16 +1,36 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Loteria, Megasena, Anuncio
-from .form import PostForm, PostFormClassificado
+from .models import Post, Loteria, Megasena, Anuncio, Attachment, Image
+from .form import PostForm, FormClassificado, AddForm
 from django.shortcuts import redirect
 from radiosite import form
 from django.http import HttpResponseRedirect
-
+from django.views.generic.edit import FormView, CreateView
 
 
 def index(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'radiosite/index.html', {'posts':posts})
+    anuncio_01 = get_object_or_404(Anuncio, pk=12)
+    anuncio_02 = get_object_or_404(Anuncio, pk=12)
+    anuncio_03 = get_object_or_404(Image, pk=14)
+    anuncio_04 = get_object_or_404(Anuncio, pk=10)
+    anuncio_05 = get_object_or_404(Anuncio, pk=9)
+    anuncio_06 = get_object_or_404(Anuncio, pk=7)
+    anuncio_07 = get_object_or_404(Anuncio, pk=6)
+    anuncio_08 = get_object_or_404(Anuncio, pk=6)
+    anuncio_09 = get_object_or_404(Anuncio, pk=6)
+    anuncio_10 = get_object_or_404(Anuncio, pk=6)
+    return render(request, 'radiosite/index.html', {'posts':posts, 
+                                                    'anuncio_01':anuncio_01,
+                                                    'anuncio_02':anuncio_02,
+                                                    'anuncio_03':anuncio_03,
+                                                    'anuncio_04':anuncio_04,
+                                                    'anuncio_05':anuncio_05,
+                                                    'anuncio_06':anuncio_06,
+                                                    'anuncio_07':anuncio_07,
+                                                    'anuncio_08':anuncio_08,
+                                                    'anuncio_09':anuncio_09,
+                                                    'anuncio_10':anuncio_10,})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -105,102 +125,60 @@ def pesquisar_megasena_result(request):
         entrada =Megasena()  
     return render(request, 'radiosite/megasena-result.html', {'entrada': entrada})
 
-def post_anuncio(request):
-    #anuncio = get_object_or_404(Anuncio)
-    return render(request, 'radiosite/anuncio_teste.html')
+
+def post_anuncio(request, pk):
+    instance = get_object_or_404(Anuncio, pk=pk)
+    #imagem = get_object_or_404(Anuncio_imagens, pk=_imagem_id)
+    return render(request, 'radiosite/anuncio_teste.html', {'instance':instance})
+                                                          
+
+def post_anuncio_detalhe(request, pk):
+    #image = get_object_or_404(Image, pk=pk)
+    anuncio_01 = get_object_or_404(Anuncio, pk=pk)
+    image = Image.objects.filter(pk=pk)
+    return render(request, 'radiosite/anuncio-detail.html', {
+                                                             'anuncio_01':anuncio_01,
+                                                             'image':image})
 
 def post_classificados(request):
-    form = PostFormClassificado(request.POST or None, request.FILES or None)
+    form = FormClassificado(request.POST or None, request.FILES or None)
+    
     if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        #menssagem de sucesso
-        #messages.success(request, "Enviado com sucesso!")
+        form.save()
+        
         return HttpResponseRedirect('classificados')
     context = {
         "form":form,
+        
+        
     }
     return render(request, "radiosite/form_classificado.html", context)
 
-
-'''     
-def search_result(self):
-        
-        # valores capturados do usuario
-        #numeros_procurados = '{}'.format(self.search_input.text)
-        numeros_procurados = self
-        #print(numeros_procurados)
-        # abri arquivo loteria.txt e relaciona dta com valores
-        #f = open('lotofacil_teste2.txt', 'rb')
-        uploaded = UploadedFile(open('teste.txt', 'rb'), 'teste.txt')
-        uploaded.close()
-        uploaded.open('r')
-        #print(f)
-        dic = {}
-        for linha in csv.reader(uploaded.file):
-            # y = str(linha.strip().split())
-            # print(y)
-            y = str(linha.split())
-            # print(y)
-            dic[y[1:18]] = y[20:107]
-            # dic[y[0:2]] = y[4:19]
-        #print(dic)
-        #f.close()
-        v_encontrado = []
-        value_encontrado = []
-        b = "'',"
-        for key_dic, value_dic in dic.items():
-            # remove aspas e vigula
-            for i in range(0, len(b)):
-                value_dic = str(value_dic).replace(b[i], "")
-                key_dic = str(key_dic).replace(b[i], "")
-
-            for j in value_dic.split():
-                for w in numeros_procurados.strip().split():
-                    if w in j:
-                        v_encontrado.append(key_dic[0:18])
-                        value_encontrado.append(value_dic[0:])
-
-        v = {}
-        for p in v_encontrado:
-            if p not in v:
-                v[p] = 1
-            else:
-                v[p] += 1
-        print(v_encontrado)
-        print(v.items())
-
-        #chaves contendo + 2,3,4,5,6 elementos
-        k_encontrado=[]
-        k_encontrado_12=[]
-        k_encontrado_13 = []
-        
-        for key_v , value_v in v.items():
-            if value_v == 2:
-                for i in range(0, len(b)):
-                    key_v = str(key_v).replace(b[i], "")
-
-                k_encontrado.append(key_v)
-
-            elif value_v == 3:
-                for i in range(0, len(b)):
-                    key_v = str(key_v).replace(b[i], "")
-
-                k_encontrado_12.append(key_v)
-
-            elif value_v == 4:
-                for i in range(0, len(b)):
-                    key_v = str(key_v).replace(b[i], "")
-
-                k_encontrado_13.append(key_v)
-        
-        mysorteio={'sorteio':k_encontrado}
-        
-        return mysorteio;   
-
-
-def pesquisar_lotofacil(request):
-    ctx = {'mysorteio':search_result(request)}
-    return render(request, 'radiosite/loteria.html', ctx)
+def add_form(request, *callback_args, **callback_kwargs): 
     
-'''
+    if request.method == "POST": 
+        
+        form = AddForm(request.POST, request.FILES)
+
+        if form.is_valid(): 
+            profile = form.save(commit=False) 
+            profile.profile = request.user
+            profile.save()
+            return redirect('form_detail', pk=profile.pk)
+        
+    else: 
+        form = AddForm() 
+    return render(request, 'radiosite/formFormulario.html', {'form': form})
+
+def form_detail(request, pk):
+    profile = get_object_or_404(Anuncio, pk=pk)
+    foto = Image.objects.filter(profile=pk)
+    
+    return render(request, 'radiosite/form_detail.html', {'profile':profile,
+                                                     'foto':foto})
+
+class ContactView(CreateView):
+    model = Anuncio
+    form_class = FormClassificado
+    template_name = 'radiosite/form_classificado.html'
+    success_url = '?success'
