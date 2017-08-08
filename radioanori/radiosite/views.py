@@ -140,6 +140,9 @@ def post_anuncio_detalhe(request, pk):
                                                              'anuncio_01':anuncio_01,
                                                              'image':image})
 
+def anuncio(request):
+    return render(request, 'radiosite/anuncio.html')
+    
 def post_classificados(request):
     form = FormClassificado(request.POST or None, request.FILES or None)
     

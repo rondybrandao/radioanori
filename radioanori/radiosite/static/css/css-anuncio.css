@@ -1,0 +1,34 @@
+/*         Just for demo     */
+body {
+  padding: 10px;
+  
+}
+#carousel-example-generic {
+  display: inline-block;
+}
+/*****************************/
+
+/* Plugin styles */
+ul.thumbnails-carousel {
+	padding: 5px 0 0 0;
+	margin: 0;
+	list-style-type: none;
+	
+}
+ul.thumbnails-carousel .center {
+	display: inline-block;
+}
+ul.thumbnails-carousel li {
+	margin-right: 5px;
+	float: left;
+	cursor: pointer;
+}
+.controls-background-reset {
+	background: none !important;
+}
+.active-thumbnail {
+	opacity: 0.4;
+}
+.indicators-fix {
+	bottom: 70px;
+}

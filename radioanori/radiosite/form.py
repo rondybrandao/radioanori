@@ -50,7 +50,7 @@ class FormClassificado(forms.ModelForm):
         return instance
 
 class AddForm(ModelForm):
-    first = MultiFileField(min_num=1, max_num=20)
+    imagens = MultiFileField(min_num=1, max_num=20)
     
     
     class Meta:
@@ -59,11 +59,11 @@ class AddForm(ModelForm):
                   'valor',
                   'contato',
                   'descricao', 
-                  'first',)
+                  'imagens',)
 
     def save(self, commit=True):
         
-        first_images = self.cleaned_data.pop('first')
+        first_images = self.cleaned_data.pop('imagens')
         instance = super(AddForm, self).save()
         cont = 0
         for each in first_images:

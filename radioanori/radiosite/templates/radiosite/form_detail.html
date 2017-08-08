@@ -10,8 +10,6 @@
 
 <link rel="stylesheet" href="{% static 'css/assets/css/bootstrap.min.css' %}">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{% static 'css/css-anuncio-detalhe.css' %}">
-<link rel="stylesheet" href="{% static 'css/css-anuncio-pontuacao.css' %}">
 <link rel="stylesheet" href="{% static 'css/css-anunciodetalhe-carroucel.css' %}">
 
 
@@ -61,16 +59,9 @@
       			<li data-target="#myCarousel" data-slide-to="{{photo.cont}}" class="thumbnail"><img src="{{ photo.image.url }}">{{photo.cont}}</li>		
     		{% endfor %}
     	</ul>
-		
-		
-		
 	  </div>
-    
-      
-
     </div><!-- End Carousel -->
 </div>
-	
 
 <script type="text/javascript" src="{% static 'css/assets/js/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'css/assets/js/bootstrap.min.js' %}"></script>
