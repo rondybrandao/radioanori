@@ -140,8 +140,11 @@ def post_anuncio_detalhe(request, pk):
                                                              'anuncio_01':anuncio_01,
                                                              'image':image})
 
-def anuncio(request):
-    return render(request, 'radiosite/anuncio.html')
+def anuncio(request, pk):
+    anuncio = get_object_or_404(Anuncio, pk=pk)
+    foto = Image.objects.filter(profile=pk)
+    return render(request, 'radiosite/anuncio.html', {'foto':foto,
+                                                      'anuncio':anuncio})
     
 def post_classificados(request):
     form = FormClassificado(request.POST or None, request.FILES or None)
@@ -167,20 +170,28 @@ def add_form(request, *callback_args, **callback_kwargs):
             profile = form.save(commit=False) 
             profile.profile = request.user
             profile.save()
-            return redirect('form_detail', pk=profile.pk)
+            return redirect('anuncio', pk=profile.pk)
         
     else: 
         form = AddForm() 
     return render(request, 'radiosite/formFormulario.html', {'form': form})
 
 def form_detail(request, pk):
+
     profile = get_object_or_404(Anuncio, pk=pk)
     foto = Image.objects.filter(profile=pk)
     
     return render(request, 'radiosite/form_detail.html', {'profile':profile,
                                                      'foto':foto})
 
+def api_google_maps(request):
+    
+    return render(request, 'radiosite/api_google_maps.html')
+
+
 class ContactView(CreateView):
+
+
     model = Anuncio
     form_class = FormClassificado
     template_name = 'radiosite/form_classificado.html'

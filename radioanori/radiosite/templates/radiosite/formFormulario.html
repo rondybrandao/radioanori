@@ -1,16 +1,83 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="{% static 'css/css-anunciodetalhe-carroucel.css' %}">
+<link rel="stylesheet" href="{% static 'css/css-anuncio.css' %}">
+
+<link rel="stylesheet" href="{% static 'css/css-anuncio-pontuacao.css' %}">
+
+<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<form method="post" class="post-form" enctype='multipart/form-data'>
-{% csrf_token %}
+	<div class="header">
+	  <h1>Classificados | Formulario</h1>
+	  <a href="/">|Inicio|</a>
+	</div> 
+	<div class="container">
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+          <form class="form-horizontal" action="" method="post" enctype='multipart/form-data'>{% csrf_token %}
+          <fieldset>
+            <legend class="text-center">Formulario do Anuncio</legend>
+    
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Titulo</label>
+              <div class="col-md-9">
+                {{form.titulo}}
+              </div>
+            </div>
+    
+            <!-- Email input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Valor</label>
+              <div class="col-md-9">
+                {{form.valor}}
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Contato</label>
+              <div class="col-md-9">
+                {{form.contato}}
+              </div>
+            </div>
+    
+            <!-- Message body -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Descriçao</label>
+              <div class="col-md-9">
+                {{form.descricao}}
+              </div>
+            </div>
+    		
+    		<div class="form-group">
+              <label class="col-md-3 control-label" for="email">Imagem</label>
+              <div class="col-md-9">
+                {{form.imagens}}
+              </div>
+            </div>
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <input type="submit" class="btn btn-default" value='Enviar dados'/>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+        </div>
+      </div>
+	</div>
+</div>
 
-{{form.as_p}}
-
-<input type="submit" class="btn btn-default" value='Enviar dados'/>
-</form>
 </body>
 </html>
