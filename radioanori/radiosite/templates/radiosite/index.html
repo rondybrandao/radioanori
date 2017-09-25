@@ -42,10 +42,10 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav custom_nav">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Objetivo</a></li>
-                <li><a href="pages/category-archive.html">Arquivos</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="pages/404.html">Anori</a></li>
+                <li><a href="{% url 'em_construcao' %}">Objetivo</a></li>
+                <li><a href="{% url 'em_construcao' %}">Arquivos</a></li>
+                <li><a href="{% url 'em_construcao' %}">Contato</a></li>
+                <li><a href="{% url 'anori' %}">Anori</a></li>
               </ul>
             </div>
           </div>
@@ -55,7 +55,7 @@
           <div id="shide">
             <div id="search-hide">
               <form action="#">
-                <input type="text" size="40" placeholder="Search here ...">
+                <input type="text" size="40" placeholder="Pesquise aqui ...">
               </form>
               <button class="remove"><span><i class="fa fa-times"></i></span></button>
             </div>
@@ -63,21 +63,16 @@
         </div>
       </div>
       <div class="header_bottom">
-        <div class="logo_area"><a class="logo" href="#"><b>R</b>adio Anori FM<span>Informação em todos os lugares</span></a></div>
-        <div class="top_addarea"><a href="#"><img src="static/css/images/addbanner_728x90_V1.jpg" alt=""></a></div>
+        <div class="logo_area"><a class="logo" href="#"><b>R</b>adio Anori FM <b>104,9</b> </a></div>
+        <div class="top_addarea"><a href="#"><img src="static/css/images/sobea.jpg" alt=""></a></div>
       </div>
     </header>
     <div class="latest_newsarea"> <span>Ultimas noticias</span>
       <ul id="ticker01" class="news_sticker">
-        <li><a href="#">My First News Item</a></li>
-        <li><a href="#">My Second News Item</a></li>
-        <li><a href="#">My Third News Item</a></li>
-        <li><a href="#">My Four News Item</a></li>
-        <li><a href="#">My Five News Item</a></li>
-        <li><a href="#">My Six News Item</a></li>
-        <li><a href="#">My Seven News Item</a></li>
-        <li><a href="#">My Eight News Item</a></li>
-        <li><a href="#">My Nine News Item</a></li>
+        <li><a href="#">{{post_destaque_2.title}}</a></li>
+        <li><a href="#">{{post_politica_1.title}}</a></li>
+        <li><a href="#">{{post_politica_2.title}}</a></li>
+        <li><a href="#">{{post_policia_1.title}}</a></li>
       </ul>
     </div>
    
@@ -109,99 +104,26 @@
         <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
           <div class="row">
             <div class="middle_bar">
-              <div class="featured_sliderarea">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                  <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                  </ol>
-                  <div class="carousel-inner" role="listbox">
-                    <div class="item active" > <img src="static/css/images/668x328.jpg" alt="">
-                      
-                        
-                      
-                    </div>
-                    <div class="item"> <img src="static/css/images/668x328.jpg" alt="">
-                      
-                        
-                     
-                    </div>
-                    <div class="item"> <img  src="static/css/images/668x328.jpg" alt="">
-                     
-                      
-                     
-                    </div>
-                    <div class="item"> <img  src="static/css/images/668x328.jpg" alt="">
-                     
-                        
-                 
-                    </div>
-                  </div>
-                  <a class="left left_slide" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a> <a class="right right_slide" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a></div>
-              </div>
-            
               <div class="single_category wow fadeInDown">
-               <br>
+              
                 <div class="category_title"> <a href="pages/category-archive.html">Destaque</a></div>
                 	<br>
                 	<div class="col-sm-6">
                 	  <br>
-                      <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=2 %}"> <img src="static/css/images/img-cot-uber.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="pages/single_page.html">UBER começa em manaus</a>
+                      <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=10 %}"> <img src="{{post_cotidiano_2.imagem.url}}"alt=""> </a></div>
+                      <a class="catg_title" href="{% url 'post_detail' pk=10 %}">{{post_cotidiano_2.title}}</a>
                       <div class="sing_commentbox">
                         <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
                         <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                    
-                
-                <!-- <div class="single_category_inner"> 
-                	
-                  <ul class="catg_nav">
-                    <li>
-                    
-                      <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=1 %}"> <img src="static/css/images/img-cultura-show_PAUL.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="templates/radiosite/pages/single_page.html"> Show Paul em MAnaus</a>
-                      <div class="sing_commentbox">
-                        <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                        <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                      
-                   </li>
-                    <li>
-                    
-                      <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=2 %}"> <img src="static/css/images/img-cot-uber.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="pages/single_page.html">UBER começa em manaus</a>
-                      <div class="sing_commentbox">
-                        <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                        <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                    
-                   </li>     
-                    <li>
-                      <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="static/css/images/310x150.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="pages/single_page.html"> Curabitur ac dictum nisl eu hendrerit ante</a>
-                      <div class="sing_commentbox">
-                        <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                        <a href="pages/single_page.html"><i class="fa fa-comments"></i>20 Comments</a></div>
-                   </li>
-                    <li>
-                      <div class="catgimg_container"> <a class="catg1_img" href="#"> <img src="static/css/images/310x150.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="#">Fusce eu nulla semper porttitor felis sit amet</a>
-                      <div class="sing_commentbox">
-                        <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                        <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                   </li>
-                  </ul>
-                </div>-->
-                </div>
-                <div class="col-sm-6">
-                	  <br>
-                      <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="static/css/images/310x150.jpg" alt=""> </a></div>
-                      <a class="catg_title" href="pages/single_page.html"> Curabitur ac dictum nisl eu hendrerit ante</a>
-                      <div class="sing_commentbox">
-                        <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                        <a href="pages/single_page.html"><i class="fa fa-comments"></i>20 Comments</a></div>
-                 
-                </div>
+                	</div>
+	                <div class="col-sm-6">
+	                	  <br>
+	                      <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=6 %}"> <img src="{{post_destaque_2.imagem.url}}" alt=""> </a></div>
+	                      <a class="catg_title" href="{% url 'post_detail' pk=6 %}"> {{post_destaque_2.title}}</a>
+	                      <div class="sing_commentbox">
+	                        <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+	                        <a href="pages/single_page.html"><i class="fa fa-comments"></i>20 Comments</a></div>
+	                </div>
                 <!--  -->
               </div>
               
@@ -212,52 +134,34 @@
                     <div class="single_category_inner">
                       <ul class="catg_nav catg_nav3">
                         <li>
-                          <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="static/css/images/292x150.jpg" alt=""> </a></div>
-                          <a class="catg_title" href="#"> Curabitur ac dictum nisl eu hendrerit ante</a>
+                          <div class="catgimg_container"> <a class="catg1_img" href="{% url 'post_detail' pk=9 %}"> <img src="{{post_policia_1.imagem.url}}" alt=""> </a></div>
+                          <a class="catg_title" href="{% url 'post_detail' pk=8 %}"> {{post_policia_1.title}}</a>
                           <div class="sing_commentbox">
                             <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                            <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                          <p class="post-summary">Duis erat purus, tincidunt vel ullamcorper ut, consequat tempus nibh. Proin condimentum risus ligula, dignissim mollis tortor hendrerit vel. Aliquam...</p>
+                            <a href="#"><i class="fa fa-comments"></i></a></div>
+                          <p class="post-summary">O ajudante de caldeira Jeferson Rios da Silva, 22, que queimou o rosto da companheira dele com água fervente na manhã do último sábado (16), em Presidente Figueiredo, se apresentou à Polícia Civil...</p>
                        </li>
                       </ul>
                       <div class="catg3_bottompost wow fadeInDown">
                         <ul class="catg3_snav">
                           <li>
-                            <div class="media"> <a class="media-left" href="pages/single_page.html"> <img src="static/css/images/70x70.jpg" alt=""> </a>
-                              <div class="media-body"> <a class="catg_title" href="pages/single_page.html"> Aliquam malesuada diam eget turpis varius</a>
+                            <div class="media"> <a class="media-left" href="{% url 'post_detail' pk=11 %}"> <img src="{{post_policia_2.imagem.url}}" alt=""> </a>
+                              <div class="media-body"> <a class="catg_title" href="pages/single_page.html"> {{post_policia_2.title}}</a>
                                 <div class="sing_commentbox">
                                   <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                                  <a href="#"><i class="fa fa-comments"></i></a></div>
                               </div>
                             </div>
                          </li>
                           <li>
-                            <div class="media"> <a class="media-left" href="pages/single_page.html"> <img src="static/css/images/70x70.jpg" alt=""> </a>
-                              <div class="media-body"> <a class="catg_title" href="pages/single_page.html"> Aliquam malesuada diam eget turpis varius</a>
+                            <div class="media"> <a class="media-left" href="{% url 'post_detail' pk=12 %}"> <img src="{{post_policia_3.imagem.url}}" alt=""> </a>
+                              <div class="media-body"> <a class="catg_title" href="{% url 'post_detail' pk=12 %}"> {{post_policia_3.title}}</a>
                                 <div class="sing_commentbox">
                                   <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                                  <a href="#"><i class="fa fa-comments"></i>comentario</a></div>
                               </div>
                             </div>
-                         </li>
-                          <li>
-                            <div class="media"> <a class="media-left" href="pages/single_page.html"> <img src="static/css/images/70x70.jpg" alt=""> </a>
-                              <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a>
-                                <div class="sing_commentbox">
-                                  <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                              </div>
-                            </div>
-                         </li>
-                          <li>
-                            <div class="media"> <a class="media-left" href="pages/single_page.html"> <img src="static/css/images/70x70.jpg" alt=""> </a>
-                              <div class="media-body"> <a class="catg_title" href="pages/single_page.html"> Aliquam malesuada diam eget turpis varius</a>
-                                <div class="sing_commentbox">
-                                  <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
-                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
-                              </div>
-                            </div>
-                         </li>
+                         </li>                          
                         </ul>
                       </div>
                     </div>
@@ -269,14 +173,116 @@
                     <div class="single_category_inner">
                       <ul class="catg_nav catg_nav3">
                         <li>
-                          <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="static/css/images/292x150.jpg" alt=""> </a></div>
-                          <a class="catg_title" href="pages/single_page.html"> Curabitur ac dictum nisl eu hendrerit ante</a>
+                          <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="{{post_politica_1.imagem.url}}"  alt=""> </a></div>
+                          <a class="catg_title" href="pages/single_page.html"> {{post_politica_1.title}}</a>
+                          <div class="sing_commentbox">
+                            <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+                            <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                          <p class="post-summary">O município de Anori, vai receber obras de infraestrutura que vão contemplar a recuperação da estrada Anori-Mato Grosso e Codajás-Anori...</p>
+                       </li>
+                      </ul>
+                      <div class="catg3_bottompost wow fadeInDown">
+                        <ul class="catg3_snav">
+                          <li>
+                            <div class="media"> <a class="media-left" href="pages/single_page.html"> <img src="{{post_politica_2.imagem.url}}" height="50%" width="100%" alt=""> </a>
+                              <div class="media-body"> <a class="catg_title" href="#"> {{post_politica_2.title}}</a>
+                                <div class="sing_commentbox">
+                                  <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                              </div>
+                            </div>
+                         </li>
+                          <li>
+                            <div class="media"> <a class="media-left" href="#"> <img src="{{post_politica_3.imagem.url}}" alt=""> </a>
+                              <div class="media-body"> <a class="catg_title" href="#"> {{post_politica_3.title}}</a>
+                                <div class="sing_commentbox">
+                                  <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                              </div>
+                            </div>
+                         </li>
+                   
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="category_three_fourarea  wow fadeInDown">
+                <div class="category_three">
+                  <div class="single_category">
+                    <div class="category_title"> <a href="pages/single_page.html">Cotidiano</a></div>
+                    <div class="single_category_inner">
+                      <ul class="catg_nav catg_nav3">
+                        <li>
+                          <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="{{post_cotidiano_1.imagem.url}}" alt=""> </a></div>
+                          <a class="catg_title" href="#"> {{post_cotidiano_1.title}}</a>
                           <div class="sing_commentbox">
                             <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
                             <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
                           <p class="post-summary">Duis erat purus, tincidunt vel ullamcorper ut, consequat tempus nibh. Proin condimentum risus ligula, dignissim mollis tortor hendrerit vel. Aliquam...</p>
                        </li>
                       </ul>
+                      <!-- 
+                      <div class="catg3_bottompost wow fadeInDown">
+                        <ul class="catg3_snav">
+                          <li>
+                            <div class="media"> <a class="media-left" href="pages/single_page.html"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                              <div class="media-body"> <a class="catg_title" href="pages/single_page.html"> Aliquam malesuada diam eget turpis varius</a>
+                                <div class="sing_commentbox">
+                                  <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                              </div>
+                            </div>
+                         </li>
+                          <li>
+                            <div class="media"> <a class="media-left" href="pages/single_page.html"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                              <div class="media-body"> <a class="catg_title" href="pages/single_page.html"> Aliquam malesuada diam eget turpis varius</a>
+                                <div class="sing_commentbox">
+                                  <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                              </div>
+                            </div>
+                         </li>
+                          <li>
+                            <div class="media"> <a class="media-left" href="pages/single_page.html"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                              <div class="media-body"> <a class="catg_title" href="#"> Aliquam malesuada diam eget turpis varius</a>
+                                <div class="sing_commentbox">
+                                  <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                              </div>
+                            </div>
+                         </li>
+                          <li>
+                            <div class="media"> <a class="media-left" href="pages/single_page.html"> <img src="static/css/images/70x70.jpg" alt=""> </a>
+                              <div class="media-body"> <a class="catg_title" href="pages/single_page.html"> Aliquam malesuada diam eget turpis varius</a>
+                                <div class="sing_commentbox">
+                                  <p><i class="fa fa-calendar"></i>19 Nov 2045</p>
+                                  <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                              </div>
+                            </div>
+                         </li>
+                        </ul>
+                      </div>
+                      -->
+                    </div>
+                  </div>
+                </div>
+                <div class="category_four wow fadeInDown">
+                  <div class="single_category">
+                    <div class="category_title"> <a href="#">Esportes</a></div>
+                    <div class="single_category_inner">
+                      <ul class="catg_nav catg_nav3">
+                        <li>
+                          <div class="catgimg_container"> <a class="catg1_img" href="pages/single_page.html"> <img src="{{post_esporte_1.imagem.url}}" alt=""> </a></div>
+                          <a class="catg_title" href="pages/single_page.html"> {{post_esporte_1.title}}</a>
+                          <div class="sing_commentbox">
+                            <p><i class="fa fa-calendar"></i>20 Set 2017</p>
+                            <a href="#"><i class="fa fa-comments"></i>20 Comments</a></div>
+                          <p class="post-summary">CBF enfrenta sérias complicações técnicas e pode ter de adiar o sistema para o Campeonato Brasileiro...</p>
+                       </li>
+                      </ul>
+                      <!--  
                       <div class="catg3_bottompost wow fadeInDown">
                         <ul class="catg3_snav">
                           <li>
@@ -317,6 +323,7 @@
                          </li>
                         </ul>
                       </div>
+                      -->
                     </div>
                   </div>
                 </div>
@@ -420,12 +427,16 @@
           <div class="row">
             <div class="right_bar">
               <div class="single_leftbar wow fadeInDown">
+                <h2><span>Ouça-nos aqui</span></h2>
+                <div class="singleleft_inner"> <a href="#"><img alt="" src="static/image/LOGO-RADIO.jpg"></a></div>
+              </div>
+              <div class="single_leftbar wow fadeInDown">
                 <h2><span>Classificados</span></h2>
                 <div class="singleleft_inner">
                   <ul class="catg3_snav ppost_nav wow fadeInDown">
                     <li>
-                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=12 %}" class="media-left"> <img src='{{anuncio_02.imagem.url}}' class='img-resp' /> </a>
-                        <div class="media-body"> <a href="{% url 'post_anuncio-detail' pk=12 %}" class="catg_title"> {{anuncio_01.titulo}}</a></div>
+                      <div class="media"> <a href="{% url 'add_form' %}" class="media-left"> <img src="static/image/classifiedembranco.jpg" class='img-resp' /></a>
+                        <div class="media-body"> <a href="{% url 'add_form' %}" class="catg_title">SEU ANUNCIO</a></div>
                       </div>
                    </li>
                     <li>
@@ -434,54 +445,30 @@
                       </div>
                    </li>
                     <li>
-                      <div class="media "> <a href="{% url 'form_detail' pk=39   %}" class="media-left"> <img src='{{anuncio_03.image.url}}' class='img-resp' /> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> {{anuncio_03.profile.titulo}} </a></div>
+                      <div class="media "> <a href="{% url 'form_detail' pk=39   %}" class="media-left"> <img src="static/image/classifiedembranco.jpg" class='img-resp' /> </a>
+                        <div class="media-body"> <a href="#" class="catg_title"> SEU ANUNCIO </a></div>
                       </div>
                    </li>
                     <li>
-                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=9 %}" class="media-left"> <img alt="" src='{{anuncio_04.imagem.url}}' class='img-resp' /> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=9 %}" class="media-left"> <img alt="" src="static/image/classifiedembranco.jpg" class='img-resp' /> </a>
+                        <div class="media-body"> <a href="#" class="catg_title"> SEU ANUNCIO</a></div>
                       </div>
                    </li>
                     <li>
-                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=8 %}" class="media-left"> <img alt="" src='{{anuncio_05.imagem.url}}' class='img-resp' /> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=8 %}" class="media-left"> <img alt="" src="static/image/classifiedembranco.jpg" class='img-resp' /> </a>
+                        <div class="media-body"> <a href="#" class="catg_title">SEU ANUNCIO</a></div>
                       </div>
                    </li>
                     <li>
-                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=6 %}" class="media-left"> <img alt="" src='{{anuncio_06.imagem.url}}' class='img-resp' /> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> {{anuncio_04.titulo}}</a></div>
+                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=6 %}" class="media-left"> <img alt="" src="static/image/classifiedembranco.jpg" class='img-resp' /> </a>
+                        <div class="media-body"> <a href="#" class="catg_title">SEU ANUNCIO</a></div>
                       </div>
                    </li>
-                    <li>
-                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=6 %}" class="media-left"> <img alt="" src='{{anuncio_07.imagem.url}}' class='img-resp' /> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=12 %}" class="media-left"> <img alt="" src='{{anuncio_08.imagem.url}}' class='img-resp' /> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> {{anuncio_08.titulo}}</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="{% url 'post_anuncio-detail' pk=13 %}" class="media-left"> <img alt="" src='{{anuncio_09.imagem.url}}' class='img-resp' /> </a>
-                        <div class="media-body"> <a href="{% url 'post_anuncio-detail' pk=13 %}" class="catg_title"> {{anuncio_10.titulo}}</a></div>
-                      </div>
-                   </li>
-                    <li>
-                      <div class="media"> <a href="#" class="media-left"> <img alt="" src='{{anuncio_10.imagem.url}}' class='img-resp' /> </a>
-                        <div class="media-body"> <a href="#" class="catg_title"> Aliquam malesuada diam eget turpis varius</a></div>
-                      </div>
-                   </li>
+                    
                   </ul>
                 </div>
               </div>
-              
-              <div class="single_leftbar wow fadeInDown">
-                <h2><span>Anuncio lado direito</span></h2>
-                <div class="singleleft_inner"> <a href="#"><img alt="" src="static/css/images/262x218.jpg"></a></div>
-              </div>
-             
+   
               <div class="single_leftbar wow fadeInDown">
                 <h2><span>Arquivos Radio Anori</span></h2>
                 <div class="singleleft_inner">

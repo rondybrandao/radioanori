@@ -21,6 +21,8 @@ urlpatterns = [
     url(r'^form-classificado$', views.add_form, name='add_form'),
     url(r'^form_detail/(?P<pk>[0-9]+)/$', views.form_detail, name='form_detail'),
     url(r'^radiosite/mapas$', views.api_google_maps, name='api_google_maps'),
+    url(r'^em_construcao$', views.em_construcao, name='em_construcao'),
+    url(r'^anori$', views.anori, name='anori'),
     #url(r'^anunciar/$', views.anunciar, name='pesquisa'),
     #url(r'^pages/$', views.single_page, name='single_page'),
 ] 

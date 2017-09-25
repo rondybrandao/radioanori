@@ -16,11 +16,13 @@ class Post(models.Model):
         ('politica', 'Politica'),
         ('cultura', 'Cultura'),
         ('esporte', 'Esporte'),
+        ('cotidiano', 'Cotidiano'),
     )
     categoria = models.CharField(max_length=10, choices=CATEGORIA_CHOICES, default='SOME STRING')
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
+    imagem = models.FileField(null=True)
     #comentario = models.ManyToManyField(Comentario)
     
     created_date = models.DateTimeField(
@@ -125,35 +127,57 @@ class Loteria(models.Model):
         for v_key, value_v in cont_key_concurso.items():
             #print(v_key)
             #for concurso_key, concurso_value in concurso.items():    
-            if value_v == 9:
-                for i in range(0, len(b)):
-                    v_key = str(v_key).replace(b[i], "")
-                    value_v = str(value_v).replace(b[i], "")
-                
-                concurso_encontrado_11.append(v_key)
-                data_encontrada_11.append(resultado_usuario[v_key])
-                acerto_encontrado_11.append(value_v)
-                
-                r.append(v_key)
-                r.append(resultado_usuario[v_key])
-                r.append(value_v)
-                
-            if value_v == 10:
-                for i in range(0, len(b)):
-                    v_key = str(v_key).replace(b[i], "")
-                    value_v = str(value_v).replace(b[i], "")
-                
-                concurso_encontrado_11.append(v_key)
-                data_encontrada_11.append(resultado_usuario[v_key])
-                acerto_encontrado_11.append(value_v)
-                
-                
-                r.append(v_key)
-                r.append(resultado_usuario[v_key])
-                r.append(value_v)
-                
-                
             if value_v == 11:
+                for i in range(0, len(b)):
+                    v_key = str(v_key).replace(b[i], "")
+                    value_v = str(value_v).replace(b[i], "")
+                
+                concurso_encontrado_11.append(v_key)
+                data_encontrada_11.append(resultado_usuario[v_key])
+                acerto_encontrado_11.append(value_v)
+                
+                r.append(v_key)
+                r.append(resultado_usuario[v_key])
+                r.append(value_v)
+                
+            if value_v == 12:
+                for i in range(0, len(b)):
+                    v_key = str(v_key).replace(b[i], "")
+                    value_v = str(value_v).replace(b[i], "")
+                
+                concurso_encontrado_11.append(v_key)
+                data_encontrada_11.append(resultado_usuario[v_key])
+                acerto_encontrado_11.append(value_v)
+                
+                
+                r.append(v_key)
+                r.append(resultado_usuario[v_key])
+                r.append(value_v)
+                
+                
+            if value_v == 13:
+                for i in range(0, len(b)):
+                    v_key = str(v_key).replace(b[i], "")
+                    value_v = str(value_v).replace(b[i], "")
+                
+                concurso_encontrado_11.append(v_key)
+                data_encontrada_11.append(resultado_usuario[v_key])
+                acerto_encontrado_11.append(value_v)        
+                
+                r.append(v_key + resultado_usuario[v_key] + value_v)
+            
+            if value_v == 14:
+                for i in range(0, len(b)):
+                    v_key = str(v_key).replace(b[i], "")
+                    value_v = str(value_v).replace(b[i], "")
+                
+                concurso_encontrado_11.append(v_key)
+                data_encontrada_11.append(resultado_usuario[v_key])
+                acerto_encontrado_11.append(value_v)        
+                
+                r.append(v_key + resultado_usuario[v_key] + value_v)
+                
+            if value_v == 15:
                 for i in range(0, len(b)):
                     v_key = str(v_key).replace(b[i], "")
                     value_v = str(value_v).replace(b[i], "")

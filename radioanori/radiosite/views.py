@@ -10,6 +10,17 @@ from django.views.generic.edit import FormView, CreateView
 
 def index(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    post_destaque_1 = get_object_or_404(Post, pk=5)
+    post_destaque_2 = get_object_or_404(Post, pk=6)
+    post_politica_1 = get_object_or_404(Post, pk=8)
+    post_politica_2 = get_object_or_404(Post, pk=14)
+    post_politica_3 = get_object_or_404(Post, pk=15)
+    post_policia_1 = get_object_or_404(Post, pk=9)
+    post_policia_2 = get_object_or_404(Post, pk=11)
+    post_policia_3 = get_object_or_404(Post, pk=12)
+    post_cotidiano_1 = get_object_or_404(Post, pk=7)
+    post_cotidiano_2 = get_object_or_404(Post, pk=10)
+    post_esporte_1 = get_object_or_404(Post, pk=16)
     anuncio_01 = get_object_or_404(Anuncio, pk=12)
     anuncio_02 = get_object_or_404(Anuncio, pk=12)
     anuncio_03 = get_object_or_404(Image, pk=14)
@@ -30,11 +41,28 @@ def index(request):
                                                     'anuncio_07':anuncio_07,
                                                     'anuncio_08':anuncio_08,
                                                     'anuncio_09':anuncio_09,
-                                                    'anuncio_10':anuncio_10,})
+                                                    'anuncio_10':anuncio_10,
+                                                    'post_destaque_1':post_destaque_1,
+                                                    'post_destaque_2':post_destaque_2,
+                                                    'post_policia_1':post_policia_1,
+                                                    'post_policia_2':post_policia_2,
+                                                    'post_policia_3':post_policia_3,                                          
+                                                    'post_politica_1':post_politica_1,
+                                                    'post_politica_2':post_politica_2,
+                                                    'post_politica_3':post_politica_3,
+                                                    'post_cotidiano_1':post_cotidiano_1,
+                                                    'post_cotidiano_2':post_cotidiano_2,
+                                                    'post_esporte_1':post_esporte_1,})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'radiosite/post_detail.html', {'post':post})
+
+def em_construcao(request):
+    return render(request, 'radiosite/emconstrucao.html')
+
+def anori(request):
+    return render(request, 'radiosite/anori.html')
 
 def post_comentario(request):
     if request.method == "POST":
@@ -75,7 +103,8 @@ def pesquisar_lotofacil(request):
     else:
         entrada = Loteria()  
     return render(request, 'radiosite/lotofacil.html', {'entrada': entrada})
-    
+
+   
 def pesquisar_megasena(request):
     if request.method == "POST":
         
