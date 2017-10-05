@@ -2,15 +2,18 @@
 <html>
     <head>
         <title>Radio Anori</title>
+        <meta charset="utf-8">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/css-comment.css' %}">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/css-cabecalho.css' %}">
+	
+		
     </head>
     <body>
-        <div class="page-header">
-            <h1><a href="/">Radio Anori FM</a></h1>
+        <div class="header">
+            <h1>Radio Anori FM 104,9</h1>
+            <a href="/">|Inicio|</a>
         </div>
 
         <div class="content container">
@@ -24,102 +27,19 @@
             					</div>
         					{% endif %}
         					<h1>{{ post.title }}</h1>
+        					<div class="container">
+        						<div>
+        							<img src={{post.imagem.url}} alt="">
+        						</div>
+        						<a>Foto: {{post.fonte_foto}}</a>
+        					</div>
+        					<br>
         					<p>{{ post.text|linebreaksbr }}</p>
     					</div>
 					{% endblock %}
                 </div>
             </div>
         </div>
-        <div class="container">
-
-			<div class="row">
-			<!-- Contenedor Principal -->
-    		<div class="comments-container">
-			  <h1>Comentarios </h1>
-			  <div class="margin">
-  				<form method="POST" class="post-form">{% csrf_token %}
-  					<textarea class="form-input" placeholder="Deixe seu comentario..">{{ form.as_p }}</textarea>
-  					
-  					<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Comentar</button>
-  				</form>
-			  </div>
-			  <ul id="comments-list" class="comments-list">
-			    <li>
-				 <div class="comment-main-level">
-					<!-- Avatar -->
-					<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-					<!-- Contenedor del Comentario -->
-					<div class="comment-box">
-						<div class="comment-head">
-							<h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-							<span>hace 20 minutos</span>
-							<i class="fa fa-reply"></i>
-							<i class="fa fa-heart"></i>
-						</div>
-						<div class="comment-content">
-							<p>{{ post.comentario|linebreaksbr }}</p>
-						</div>
-					</div>
-				</div>
-				<!-- Respuestas de los comentarios -->
-				<ul class="comments-list reply-list">
-					<li>
-						<!-- Avatar -->
-						<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-						<!-- Contenedor del Comentario -->
-						<div class="comment-box">
-							<div class="comment-head">
-								<h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-								<span>hace 10 minutos</span>
-								<i class="fa fa-reply"></i>
-								<i class="fa fa-heart"></i>
-							</div>
-							<div class="comment-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-							</div>
-						</div>
-					</li>
-
-					<li>
-						<!-- Avatar -->
-						<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-						<!-- Contenedor del Comentario -->
-						<div class="comment-box">
-							<div class="comment-head">
-								<h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-								<span>hace 10 minutos</span>
-								<i class="fa fa-reply"></i>
-								<i class="fa fa-heart"></i>
-							</div>
-							<div class="comment-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-							</div>
-						</div>
-					</li>
-				</ul>
-			</li>
-
-			<li>
-				<div class="comment-main-level">
-					<!-- Avatar -->
-					<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-					<!-- Contenedor del Comentario -->
-					<div class="comment-box">
-						<div class="comment-head">
-							<h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-							<span>hace 10 minutos</span>
-							<i class="fa fa-reply"></i>
-							<i class="fa fa-heart"></i>
-						</div>
-						<div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-						</div>
-					</div>
-				</div>
-			</li>
-		</ul>
-	</div>
-	</div>
-</div>
+        
     </body>
 </html>

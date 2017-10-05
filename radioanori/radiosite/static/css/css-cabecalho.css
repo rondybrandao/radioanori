@@ -4,10 +4,12 @@ body {
 }
 .header {
 	    background-color: #9933cc;
-	    color: #ffffff;
 	    padding: 15px;
-		}
+	    color: #ddd;
+}
+
 .col-md-8 {
 	padding: 15px;
 	
 }
+

@@ -23,10 +23,12 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     imagem = models.FileField(null=True)
-    #comentario = models.ManyToManyField(Comentario)
+    fonte_post = models.CharField(max_length=20)
+    fonte_foto = models.CharField(max_length=20)
     
     created_date = models.DateTimeField(
             default=timezone.now)
+    
     published_date = models.DateTimeField(
             blank=True, null=True)
 
@@ -37,7 +39,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
+'''
 class Loteria(models.Model):
    
     concurso_loteria = models.CharField(max_length=50)
@@ -100,20 +102,20 @@ class Loteria(models.Model):
                         #print(w, j)
                         #print(key_dic.split().pop(0), key_dic.split().pop(1))
                         
-        '''                
-        v = {}
-        concurso = {}
-        print(resultado_usuario)
-        for chave_concurso, valor_data in resultado_usuario.items():
-            if chave_concurso not in v: 
-                v[chave_concurso] = 1
-                concurso[valor_data] = 1
-                #print(v[chave_concurso])
-            else:
-                v[chave_concurso] += 1
-                concurso[valor_data] += 1
+                       
+#        v = {}
+#       concurso = {}
+#        print(resultado_usuario)
+#        for chave_concurso, valor_data in resultado_usuario.items():
+#            if chave_concurso not in v: 
+#                v[chave_concurso] = 1
+#                concurso[valor_data] = 1
+#                #print(v[chave_concurso])
+#            else:
+#               v[chave_concurso] += 1
+#                concurso[valor_data] += 1
                 
-        '''       
+             
         print(cont_key_concurso.items())
         #print(v.items())
 
@@ -192,7 +194,19 @@ class Loteria(models.Model):
         self.data_loteria = data_encontrada_11
         self.acerto_loteria = acerto_encontrado_11
         self.result = r
-
+'''
+                            
+class Megasena(models.Model):
+    num_concurso = models.CharField(max_length=15)
+    data_sorteio = models.CharField(max_length=15)
+    num_1 = models.CharField(max_length=5)
+    num_2 = models.CharField(max_length=5)
+    num_3 = models.CharField(max_length=5)
+    num_4 = models.CharField(max_length=5)
+    num_5 = models.CharField(max_length=5)
+    num_6 = models.CharField(max_length=5)
+    
+'''
 class Megasena(models.Model):
    
     concurso_loteria = models.CharField(max_length=50)
@@ -200,6 +214,7 @@ class Megasena(models.Model):
     acerto_loteria = models.CharField(max_length=50)
     entrada_usuario = models.CharField(max_length=50)
     result = models.CharField(max_length=200)
+    
     def search_result(self):
         # valores capturados do usuario
         numeros_procurados = []
@@ -255,7 +270,7 @@ class Megasena(models.Model):
                         #print(w, j)
                         #print(key_dic.split().pop(0), key_dic.split().pop(1))
                         
-        '''                
+        ------------------- estava comentado-----------              
         v = {}
         concurso = {}
         print(resultado_usuario)
@@ -268,7 +283,8 @@ class Megasena(models.Model):
                 v[chave_concurso] += 1
                 concurso[valor_data] += 1
                 
-        '''       
+        ---------------estava comentado--------------
+            
         print(cont_key_concurso.items())
         #print(v.items())
 
@@ -325,7 +341,7 @@ class Megasena(models.Model):
         self.data_loteria = data_encontrada_11
         self.acerto_loteria = acerto_encontrado_11
         self.result = r
-
+'''
 class Anuncio_imagens(models.Model):
     #anuncio = models.ForeignKey(Anuncio, on_delete=models.CASCADE)
     imagem = models.FileField(upload_to="files/%Y/%m/%d")

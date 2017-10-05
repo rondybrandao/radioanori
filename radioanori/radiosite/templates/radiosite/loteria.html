@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/css-loteria.css' %}">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-        <script src="static/js/main.js"></script>
+        <link rel="stylesheet" href="{% static 'css/css-table-result-mega.css' %}">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
         <style>
 			* {
 			    box-sizing: border-box;
@@ -86,7 +86,7 @@
         
     </head>
     
-    <body>
+<body>
 
 <div class="header">
   <h1>Loteria</h1>
@@ -98,97 +98,145 @@
 <div class="col-3 menu">
   <ul>
     <li><a href="/">Inicio</a></li>
-    <li><a href="/lotofacil">Lotofacil</a></li>
-    <li><a href="/megasena">Megasena</a></li>
-    <li>Sorteios</li>
+    <li><a href="#">Lotofacil</a></li>
+    <li><a href="#">Megasena</a></li>
   </ul>
 </div>
 
-<div class="col-9">
-    
+<div class="col-9">  
   <div class="container">
+  <div class="row col-md-6 col-md-offset-2 custyle">
 	<div class="row">
-		<div class="span12">
-            <p class="lead">Escolha a sua aposta:</p>
+            <!--  <p class="lead">Escolha a sua aposta:</p>-->
             <div id="tab" class="btn-group" data-toggle="buttons-radio">
-              <a href="/lotofacil" class="btn btn-large btn-info active" >Lotofacil</a>
-              <a href="/megasena" class="btn btn-large btn-info" >Mega sena</a>
+              <a href="#megasena" class="btn btn-large btn-info active" >Megasena</a>
+              <a href="#lotofacil" class="btn btn-large btn-info" >Lotofacil</a>
               <a href="#quina" class="btn btn-large btn-info" data-toggle="tab">Quina</a>
               <a href="#lotomania" class="btn btn-large btn-info"  data-toggle="tab">Lotomania</a>
             </div>
              
-            <div class="tab-pane active" id="lotofacil">
-                
+            <div class="tab-pane active" id="megasena">    
                 <div class="row">
-                    <div class="span3">
-                      <form action="/lotofacil/" method="POST">{% csrf_token %}
-                      <div style="float:left">
-                      	<p class="lead">Lotofacil</p>
-						<table>
-							<tr>
-								<td><label class="niceform"> 01 <input type="checkbox" value="01" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 02 <input type="checkbox" value="02" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 03 <input type="checkbox" value="03" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 04 <input type="checkbox" value="04" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 05 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+                      <form action="/loteria/" method="POST">{% csrf_token %}	                      	
+							<table class="table table-striped custab">
+							<h3>Mega-Sena</h3>
+								<tr>
+									<td><label class="niceform"> 01 <input type="checkbox" value="01" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 02 <input type="checkbox" value="02" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 03 <input type="checkbox" value="03" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 04 <input type="checkbox" value="04" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 05 <input type="checkbox" value="05" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 06 <input type="checkbox" value="06" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 07 <input type="checkbox" value="07" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 08 <input type="checkbox" value="08" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 09 <input type="checkbox" value="09" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 10 <input type="checkbox" value="10" name="pesquisa"> </label></td>
+									
+								</tr>
+								<tr>
+									<td><label class="niceform"> 11 <input type="checkbox" value="11" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 12 <input type="checkbox" value="12" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 13 <input type="checkbox" value="13" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 14 <input type="checkbox" value="14" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 15 <input type="checkbox" value="15" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 16 <input type="checkbox" value="16" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 17 <input type="checkbox" value="17" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 18 <input type="checkbox" value="18" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 19 <input type="checkbox" value="19" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 20 <input type="checkbox" value="20" name="pesquisa"> </label></td>
 								
-							</tr>
-							<tr>
-								<td><label class="niceform"> 06 <input type="checkbox" value="06" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 07 <input type="checkbox" value="07" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 08 <input type="checkbox" value="08" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 09 <input type="checkbox" value="09" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 10 <input type="checkbox" value="10" name="pesquisa"> </label></td>
+								</tr>
+								<tr>
+									<td><label class="niceform"> 21 <input type="checkbox" value="21" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 22 <input type="checkbox" value="22" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 23 <input type="checkbox" value="23" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 24 <input type="checkbox" value="24" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 25 <input type="checkbox" value="25" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 26 <input type="checkbox" value="26" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 27 <input type="checkbox" value="27" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 28 <input type="checkbox" value="28" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 29 <input type="checkbox" value="29" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 30 <input type="checkbox" value="30" name="pesquisa"> </label></td>
+								
+								</tr>
+								<tr>
+									<td><label class="niceform"> 31 <input type="checkbox" value="31" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 32 <input type="checkbox" value="32" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 33 <input type="checkbox" value="33" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 34 <input type="checkbox" value="34" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 35 <input type="checkbox" value="35" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 36 <input type="checkbox" value="36" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 37 <input type="checkbox" value="37" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 38 <input type="checkbox" value="38" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 39 <input type="checkbox" value="39" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 40 <input type="checkbox" value="40" name="pesquisa"> </label></td>
+								
+								</tr>
+								<tr>
+									<td><label class="niceform"> 41 <input type="checkbox" value="41" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 42 <input type="checkbox" value="42" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 43 <input type="checkbox" value="43" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 44 <input type="checkbox" value="44" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 45 <input type="checkbox" value="45" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 46 <input type="checkbox" value="46" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 47 <input type="checkbox" value="47" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 48 <input type="checkbox" value="48" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 49 <input type="checkbox" value="49" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 50 <input type="checkbox" value="50" name="pesquisa"> </label></td>
+								
+								</tr>
+								<tr>
+									<td><label class="niceform"> 51 <input type="checkbox" value="51" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 52 <input type="checkbox" value="52" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 53 <input type="checkbox" value="53" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 54 <input type="checkbox" value="54" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 55 <input type="checkbox" value="55" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 56 <input type="checkbox" value="56" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 57 <input type="checkbox" value="57" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 58 <input type="checkbox" value="58" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 59 <input type="checkbox" value="59" name="pesquisa"> </label></td>
+									<td><label class="niceform"> 60 <input type="checkbox" value="60" name="pesquisa"> </label></td>		
+								</tr>			
+							</table>
 							
-							</tr>
-							<tr>
-								<td><label class="niceform"> 11 <input type="checkbox" value="11" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 12 <input type="checkbox" value="12" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 13 <input type="checkbox" value="13" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 14 <input type="checkbox" value="14" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 15 <input type="checkbox" value="15" name="pesquisa"> </label></td>
-							
-							</tr>
-							<tr>
-								<td><label class="niceform"> 16 <input type="checkbox" value="16" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 17 <input type="checkbox" value="17" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 18 <input type="checkbox" value="18" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 19 <input type="checkbox" value="19" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 20 <input type="checkbox" value="20" name="pesquisa"> </label></td>
-							
-							</tr>
-							<tr>
-								<td><label class="niceform"> 21 <input type="checkbox" value="21" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 22 <input type="checkbox" value="22" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 23 <input type="checkbox" value="23" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 24 <input type="checkbox" value="24" name="pesquisa"> </label></td>
-								<td><label class="niceform"> 25 <input type="checkbox" value="25" name="pesquisa"> </label></td>
-							
-							</tr>
-						
-						</table>
-							<div class="col-xs-2">
-					        <button type="submit" id="pesquisa" class="btn btn-success" data-toggle="#jobInfo">Pesquisar</button>
-					        </div>
-					 	</div>
+							<div>
+					        	<button type="submit" class="btn btn-success">Pesquisar</button>
+					        </div>			        
 						</form>  		  
-                    </div>
+                   
                     <div class="span9">
-                      <a>{{mysorteio.sorteio}}</a> 
+                    {{encontrado}}
+                      <table class="table table-striped custab">
+			           	  <thead>
+						        <tr>
+						            <th>Concurso</th>
+						            <th>Data</th>
+						            <th>Dezenas</th>
+						            <th>Acertos</th>
+						        </tr>
+						    </thead>
+			              <tbody>
+			              {% for r, v in megasena_resposta.items %}
+			              	
+			                <tr>
+			                    <td>{{r.num_concurso}}</td>
+			                    <td>{{r.data_sorteio}}</td>
+			                    <td>{{r.num_1}} {{r.num_2}} {{r.num_3}} {{r.num_4}} {{r.num_5}} {{r.num_6}}</td>
+			                    <td>{{v}}</td>  
+			                    </td>                                       
+			                </tr>			                 
+			                {% endfor %}
+			              </tbody>
+			            </table> 
                     </div>
                 </div>
               </div>
-			  
-		  <hr>    
-        </div>
 	</div>
   </div>
   </div>
+  </div>
  </div>
-</div>
-
 </body>
-
 </html>  
         
         

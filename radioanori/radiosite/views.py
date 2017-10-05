@@ -1,37 +1,36 @@
 from django.shortcuts import render, get_object_or_404
-from django.utils import timezone
-from .models import Post, Loteria, Megasena, Anuncio, Attachment, Image
+from .models import Post, Megasena, Anuncio, Image
 from .form import PostForm, FormClassificado, AddForm
 from django.shortcuts import redirect
 from radiosite import form
 from django.http import HttpResponseRedirect
-from django.views.generic.edit import FormView, CreateView
-
+from django.views.generic.edit import CreateView
+from django.db.models import Q
 
 def index(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    post_destaque_1 = get_object_or_404(Post, pk=5)
-    post_destaque_2 = get_object_or_404(Post, pk=6)
-    post_politica_1 = get_object_or_404(Post, pk=8)
-    post_politica_2 = get_object_or_404(Post, pk=14)
-    post_politica_3 = get_object_or_404(Post, pk=15)
-    post_policia_1 = get_object_or_404(Post, pk=9)
-    post_policia_2 = get_object_or_404(Post, pk=11)
-    post_policia_3 = get_object_or_404(Post, pk=12)
-    post_cotidiano_1 = get_object_or_404(Post, pk=7)
-    post_cotidiano_2 = get_object_or_404(Post, pk=10)
-    post_esporte_1 = get_object_or_404(Post, pk=16)
-    anuncio_01 = get_object_or_404(Anuncio, pk=12)
-    anuncio_02 = get_object_or_404(Anuncio, pk=12)
-    anuncio_03 = get_object_or_404(Image, pk=14)
-    anuncio_04 = get_object_or_404(Anuncio, pk=10)
-    anuncio_05 = get_object_or_404(Anuncio, pk=9)
-    anuncio_06 = get_object_or_404(Anuncio, pk=7)
-    anuncio_07 = get_object_or_404(Anuncio, pk=6)
-    anuncio_08 = get_object_or_404(Anuncio, pk=6)
-    anuncio_09 = get_object_or_404(Anuncio, pk=6)
-    anuncio_10 = get_object_or_404(Anuncio, pk=6)
-    return render(request, 'radiosite/index.html', {'posts':posts, 
+    #posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    post_destaque_1 = get_object_or_404(Post, pk=4)
+    post_destaque_2 = get_object_or_404(Post, pk=3)
+    post_politica_1 = get_object_or_404(Post, pk=1)
+    post_politica_2 = get_object_or_404(Post, pk=2)
+    post_politica_3 = get_object_or_404(Post, pk=3)
+    post_policia_1 = get_object_or_404(Post, pk=5)
+    post_policia_2 = get_object_or_404(Post, pk=7)
+    post_policia_3 = get_object_or_404(Post, pk=5)
+    post_cotidiano_1 = get_object_or_404(Post, pk=6)
+    post_cotidiano_2 = get_object_or_404(Post, pk=4)
+    post_esporte_1 = get_object_or_404(Post, pk=8)
+    anuncio_01 = get_object_or_404(Anuncio, pk=1)
+    anuncio_02 = get_object_or_404(Anuncio, pk=1)
+    anuncio_03 = get_object_or_404(Image, pk=1)
+    anuncio_04 = get_object_or_404(Anuncio, pk=1)
+    anuncio_05 = get_object_or_404(Anuncio, pk=1)
+    anuncio_06 = get_object_or_404(Anuncio, pk=1)
+    anuncio_07 = get_object_or_404(Anuncio, pk=1)
+    anuncio_08 = get_object_or_404(Anuncio, pk=1)
+    anuncio_09 = get_object_or_404(Anuncio, pk=1)
+    anuncio_10 = get_object_or_404(Anuncio, pk=1)
+    return render(request, 'radiosite/index.html', {
                                                     'anuncio_01':anuncio_01,
                                                     'anuncio_02':anuncio_02,
                                                     'anuncio_03':anuncio_03,
@@ -77,9 +76,7 @@ def post_comentario(request):
         form = PostForm()
     return redirect('post_detail', pk=post.pk)
 
-def loteria(request):
-    return render(request, 'radiosite/loteria.html')
-
+'''
 def pesquisar_lotofacil(request):
     if request.method == "POST":
         
@@ -153,8 +150,53 @@ def pesquisar_megasena_result(request):
     else:
         entrada =Megasena()  
     return render(request, 'radiosite/megasena-result.html', {'entrada': entrada})
+'''
 
 
+def loteria(request):
+    
+    if request.method=="POST":
+        n_usuario = request.POST.getlist('pesquisa')
+        nUsuario = n_usuario
+        return redirect(megasena(nUsuario))
+        #return redirect(megasena)
+    return render(request, 'radiosite/loteria.html')
+
+def megasena(request):
+    megasena_resposta = {}
+    num_usuario = request.POST.getlist('pesquisa')
+    encontrado = []
+    lista_resultado_db = []    
+    lista_consurso = []
+    cont_concurso = {}
+    concursos = []
+    lista_megasena = []
+    if request.method=="POST" and (len(num_usuario) == 6 or len(num_usuario) == 0):      
+        for u in num_usuario:
+            megasena = Megasena.objects.filter(Q(num_1=u) | Q(num_2=u) | Q(num_3=u) | Q(num_4=u) | Q(num_5=u) | Q(num_6=u)).distinct('num_concurso')                                             
+            for m in megasena:
+                lista_resultado_db = m.num_1, m.num_2, m.num_3, m.num_4, m.num_5, m.num_6                                
+                
+                if u in lista_resultado_db:  
+                    lista_consurso.append(m.num_concurso)
+                    lista_megasena.append(m)
+                    
+                    if m.num_concurso not in cont_concurso:
+                        cont_concurso[m.num_concurso] = 1
+                    else:
+                        cont_concurso[m.num_concurso] += 1
+                                
+        for k, c in cont_concurso.items():
+            for m in lista_megasena:
+                if c > 3 and k == m.num_concurso:
+                    megasena_resposta[m] = c + 1
+                    
+    
+    print(concursos, cont_concurso.items())
+    print("num_usuario:", num_usuario)  
+    return render(request, 'radiosite/loteria.html', {'megasena_resposta':megasena_resposta,
+                                                   'escolhidas':num_usuario,
+                                                   'encontrado':encontrado})
 def post_anuncio(request, pk):
     instance = get_object_or_404(Anuncio, pk=pk)
     #imagem = get_object_or_404(Anuncio_imagens, pk=_imagem_id)
@@ -219,7 +261,6 @@ def api_google_maps(request):
 
 
 class ContactView(CreateView):
-
 
     model = Anuncio
     form_class = FormClassificado
