@@ -46,3 +46,7 @@ ul.thumbnails-carousel li {
 .indicators-fix {
 	bottom: 70px;
 }
+
+.btn {
+	background-color: blue;	
+}
